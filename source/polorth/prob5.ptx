@@ -1,0 +1,716 @@
+<section>
+    <title>Polynômes orthogonaux relatifs à une forme linéaire</title>
+    <exercises><title>Problème 5</title>
+    
+    
+        <introduction>
+            <p>
+                On considère une forme linéaire <m> L </m> de l’espace <m> \mathbb{R}[X] </m>. On notera pour tout <m> n \in \mathbb{N} </m>, <m> \mu_n = L(X^n) </m>, la suite <m> (\mu_n)_n </m> est alors dite suite des moments de la forme linéaire <m> L </m>.
+            </p>
+            <p>
+                Une suite de polynôme <m> (P_n)_n </m> est dite une suite de polynôme orthogonaux (en abrégé spo) relativement à la forme linéaire <m> L </m> si et seulement si  
+                <me>
+                \begin{cases} 
+                \forall n \in \mathbb{N} \amp  \deg P_n = n \\ 
+                \forall (n, m) \in \mathbb{N}^2 \amp  L(P_n P_m) = h_n \delta_{nm} 
+                \end{cases}
+                \tag{P.O}
+                </me>
+                où <m> (h_n)_n </m> est une suite de réels non nuls.
+            </p>
+        </introduction>
+        <subexercises>
+            <title>Condition nécessaire et suffisante d’existence d’une spo</title>
+            <introduction>
+                <p>
+                    Cette partie traite des conditions nécessaires et suffisantes pour l'existence d'une suite de polynômes orthogonaux relativement à une forme linéaire <m> L </m>.
+                </p>
+            </introduction>
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m> L </m> est entièrement déterminée par la suite de ses moments <m> (\mu_n)_n </m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Si les moments <m> \mu_n </m> sont connus, alors pour tout élément <m> P = \sum_{k=0}^p a_k X^k </m> de <m> \mathbb{R}[X] </m>, on a
+                        <me>
+                        L(P) = \sum_{k=0}^p \mu_k a_k
+                        </me>
+                        Ce qui détermine entièrement <m> L </m>.
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que si <m> (P_n)_n </m> et <m> (Q_n)_n </m> sont deux spo relatives à <m> L </m>, alors pour tout <m> n \in \mathbb{N} </m>, il existe <m> \alpha_n \in \mathbb{R}^* </m> tel que <m> Q_n = \alpha_n P_n </m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soient <m> (P_n)_n </m> et <m> (Q_n)_n </m> deux spo de <m> \mathbb{R}[X] </m>. Le raisonnement est exactement le même que pour un produit scalaire : on pose
+                        <me>
+                        Q_n = \sum_{k=0}^n \alpha_k P_k
+                        </me>
+                        Puisque pour tout <m> P \in \mathbb{R}_{n-1}[X] </m>, on a <m> L(PQ_n) = 0 </m>, alors <m> 0 = L(P_k Q_n) = \alpha_k h_k </m> et donc <m> \alpha_k = 0 </m> pour tout <m> k \lt n </m>. Ainsi, <m> Q_n = \alpha_n P_n </m>.
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        Existe-t-il une spo de <m> L </m> lorsque pour tout <m> n \in \mathbb{N} </m>, <m> \mu_n = a^n </m> où <m> a </m> est un réel fixé non nul ?
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        On considère ici la forme linéaire <m> L </m> déterminée par les conditions <m> L(X^n) = a^n </m> pour tout <m> n \in \mathbb{N} </m>. De cette définition, il découle que
+                        <me>
+                        \forall P \in \mathbb{R}[X], \, L(P) = P(a)
+                        </me>
+                        S’il existait une spo <m> (P_n)_n </m> pour <m> L </m>, on aurait <m> P_0 L(P_n) = L(P_0 P_n) = 0 </m> et donc <m> P_n(a) = L(P_n) = 0 </m> pour tout <m> n \gt 0 </m>. Mais alors on aurait <m> L(P_n^2) = P_n(a)^2 = 0 </m>, ce qui contredirait la deuxième condition que doit remplir une spo.
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        On pose pour tout <m> n \in \mathbb{N} </m>
+                        <me>
+                        H_n =
+                        \begin{pmatrix}
+                        \mu_0 \amp  \mu_1 \amp  \cdots \amp  \mu_n \\
+                        \mu_1 \amp  \mu_2 \amp  \cdots \amp  \mu_{n+1} \\
+                        \vdots \amp  \vdots \amp  \amp  \vdots \\
+                        \mu_n \amp  \mu_{n+1} \amp  \cdots \amp  \mu_{2n} 
+                        \end{pmatrix}
+                        </me>
+                        et <m> \Delta_n = \det H_n </m>. Montrer que <m> L </m> admet au moins une spo si et seulement si <m> \Delta_n \neq 0 </m> pour tout <m> n \in \mathbb{N} </m>. On dira que la forme linéaire <m> L </m> est presque définie lorsqu'elle vérifie cette condition.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Considérons pour tout <m> n \in \mathbb{N} </m>, l’application
+                        <me>
+                        \Phi_n : \, \mathbb{R}_n[X]^2 \longrightarrow \, \mathbb{R} \quad (P, Q) \longmapsto \, L(PQ)
+                        </me>
+                        <m> \Phi_n </m> est une forme bilinéaire symétrique, et <m> H_n </m> représente sa matrice dans la base <m> \mathcal{B}_n = (1, X, \ldots, X^n) </m> de <m> \mathbb{R}_n[X] </m> (i.e., <m> H_n = (\Phi_n(X_i, X_j))_{i,j} </m>). Pour deux éléments <m> P </m> et <m> Q </m> de <m> \mathbb{R}_n[X] </m>, on a
+                        <me>
+                        \Phi_n(P, Q) = {}^{t}Y H_n Z = \sum_{0 \leq i,j \leq n} \mu_{i+j} y_i z_j
+                        </me>
+                        où <m> Y = [P]_{\mathcal{B}_n} = {}^{t}(y_0 y_1 \ldots y_n) </m> et <m> Z = [Q]_{\mathcal{B}_n} = {}^{t}(z_0 z_1 \ldots z_n) </m>.
+                    </p>
+                    <p>
+                        On suppose que <m> L </m> admet au moins une spo <m> (P_n)_n </m>. Selon le même principe que dans <m> \mathcal{B}_n </m>, l’écriture de <m> \Phi_n(P, Q) </m> dans la base <m> \mathcal{P}_n = (P_0, P_1, \ldots, P_n) </m> est de la forme
+                        <me>
+                        \Phi_n(P, Q) = {}^{t}Y' D_n Z'
+                        </me>
+                        où <m> D_n = (\Phi_n(P_i, P_j))_{i,j} = (h_i \delta_{i,j})_{i,j} </m>, <m> Y' = [P]_{\mathcal{P}_n} </m> et <m> Z' = [Q]_{\mathcal{P}_n} </m>. Maintenant, si on pose <m> U = P_{\mathcal{P}_n}^{\mathcal{B}_n} </m>, alors <m> Y' = UY </m> et <m> Z' = UZ </m>, et on en déduit que
+                        <me>
+                        \forall (X, Y) \in M_{n+1,1}(\mathbb{R}^2), {}^{t}X H_n Y = {}^{t}X^{t} U D_n UY
+                        </me>
+                        et donc que
+                        <me>
+                        H_n = {}^{t}U D_n U
+                        </me>
+                        Or, <m> D_n </m> est diagonale inversible, donc <m> H_n </m> est inversible.
+                    </p>
+                    <p>
+                        Réciproquement, supposons que les matrices <m> H_n </m> sont toutes inversibles. Considérons une famille de polynômes <m> (P_n)_n </m> qui est échelonnée et posons pour tout <m> n \in \mathbb{N} </m>, <m> Z_n = [P_n]_{\mathcal{B}_n} </m>.
+                    </p>
+                    <p>
+                        Soit <m> n \in \mathbb{N} </m>. Supposons que la famille <m> (P_0, P_1, \ldots, P_n) </m> est « <m> L </m> – orthogonale » et montrons que <m> P_{n+1} </m> peut être choisi de telle sorte que <m> L(P_{n+1} P_k) = 0 </m> pour tout <m> k \lt n </m>. Pour cela, il faut et il suffit que <m> L(P_{n+1} Q) = 0 </m> pour tout <m> Q \in \mathbb{R}_n[X] </m>. Posons donc
+                        <me>
+                        H_{n+1} = 
+                        \begin{pmatrix}
+                        H_n \amp  C_n \\
+                        t C_n \amp  \mu_{2n+2}
+                        \end{pmatrix}
+                        \quad Z_{n+1} = 
+                        \begin{pmatrix}
+                        Z \\
+                        z
+                        \end{pmatrix}
+                        \quad V = 
+                        \begin{pmatrix}
+                        U \\
+                        0
+                        \end{pmatrix}
+                        </me>
+                        où <m> V </m> représente la matrice des coordonnées d’un polynôme quelconque <m> Q </m> de <m> \mathbb{R}_n[X] </m> dans <m> \mathcal{B}_{n+1} </m>. On a alors
+                        <me>
+                        L(P_{n+1} Q) = {}^{t}Z_{n+1} H_{n+1} V
+                        </me>
+                        <me>
+                        = ({}^{t}Z \quad z) 
+                        \begin{pmatrix}
+                        H_n U \\
+                        t C_n U
+                        \end{pmatrix}
+                        </me>
+                        <me>
+                        = {}^{t}Z H_n U + z^{t}C_n U
+                        </me>
+                        <me>
+                        = ({}^{t}Z H_n + z^{t}C) U
+                        </me>
+                        Sachant que <m> {}^{t}Z H_n + z^{t}C \in M_{1,n+1}(\mathbb{R}) </m>, on en déduit les équivalences
+                        <me>
+                        \forall Q \in \mathbb{R}_n[X], L(P_{n+1} Q) = 0 \iff
+                        </me>
+                        <me>
+                        \forall U \in M_{n+1,1}(\mathbb{R}), ({}^{t}Z H_n + z^{t}C) U = 0 \iff {}^{t}Z H_n + z^{t}C = 0
+                        </me>
+                        On peut prendre un scalaire non nul <m> z </m> quelconque (qui sera le coefficient dominant du polynôme <m> P_{n+1} </m> à construire) et il suffit donc de définir <m> Z </m> par
+                        <me>
+                        Z = -z H_n^{-1} C
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        On suppose que <m> L </m> est presque définie. Montrer que la suite de polynômes <m> (P_n)_n </m> définie par
+                        <me>
+                        \forall n \in \mathbb{N} \quad \forall x \in \mathbb{R} \quad P_n(x) =
+                        \begin{vmatrix}
+                        \mu_0 \amp  \mu_1 \amp  \cdots \amp  \mu_n \\
+                        \mu_1 \amp  \mu_2 \amp  \cdots \amp  \mu_{n+1} \\
+                        \vdots \amp  \vdots \amp  \amp  \vdots \\
+                        \mu_{n-1} \amp  \mu_n \amp  \cdots \amp  \mu_{2n-1} \\
+                        1 \amp  x \amp  \cdots \amp  x^n
+                        \end{vmatrix}
+                        </me>
+                        est une spo relative à <m> L </m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Si on développe le déterminant <m> P_n(x) </m> selon la dernière ligne, on voit que les cofacteurs utilisés sont les mêmes que ceux de la matrice <m> H_n </m>.
+                        <me>
+                        P_n(x) = \sum_{j=0}^n (-1)^{n+j} \alpha_{nj}x^j
+                        </me>
+                        et puisque <m> \text{Com}(H_n)H_n = \Delta_n I_{n+1} </m>, on a
+                        <me>
+                        \sum_{j=0}^n (-1)^{n+j} \mu_{i+j}\alpha_{nj} = 0 \quad \text{pour } i = 0, 1, \ldots, n-1
+                        </me>
+                        <me>
+                        \sum_{j=0}^n (-1)^{n+j} \mu_{i+j}\alpha_{nj} = \Delta_n
+                        </me>
+                        Pour un polynôme <m> Q = \sum_{k=0}^n z_k X^k \in \mathbb{R}_{n-1}[X] </m> (avec <m> z_n = 0 </m> donc), on a
+                        <me>
+                        L(QP_n) = \sum_{0 \leq i,j \leq n} \mu_{i+j}z_i \cdot (-1)^{n+j}\alpha_{nj}
+                        </me>
+                        <me>
+                        = \sum_{i=0}^n z_i \left( \sum_{j=0}^n (-1)^{n+j} \mu_{i+j}\alpha_{nj} \right)
+                        </me>
+                        <me>
+                        = z_n\Delta_n = 0
+                        </me>
+                        Par ailleurs, un développement similaire donne
+                        <me>
+                        L(P_nP_n) = \alpha_{n,n}\Delta_n = \Delta_{n-1}\Delta_n \neq 0
+                        </me>
+                        Alors <m> (P_n)_n </m> est une spo pour <m> L </m>.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+
+       
+       
+        <subexercises>
+            <title>Quelques propriétés des matrices symétriques</title>
+            <introduction>
+                <p>
+                    Soit <m>A = (a_{ij})_{i,j} \in M_n (\mathbb{R})</m> une matrice symétrique. On rappelle que <m>A</m> est dite définie positive si et seulement si
+                    <me>
+                    \forall X \in M_{n,1} (\mathbb{R}) \setminus \{0\} \quad ^t XAX \gt 0
+                    </me>
+                    On pose pour tout <m>p \in [1; n]</m>, <m>A_p = (a_{ij})_{1 \leq i,j \leq p}</m>. On veut montrer que <m>A</m> est définie positive si et seulement si
+                    <me>
+                    \forall p \in [1; n] \quad \text{det}(A_p) \gt 0 \tag{CDP}
+                    </me>
+                </p>
+            </introduction>
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que si <m>A</m> est définie positive, alors elle vérifie la condition (CDP).
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        On suppose que <m>A</m> est symétrique définie positive. Soit <m>p \in [1; n]</m> et considérons <m>Y \in M_{p,1}(\mathbb{R}) \setminus \{0\}</m> et <m>X = \binom{Y}{0} \in M_{n,1}(\mathbb{R})</m>. On a <m>X \neq 0</m> donc <m>XAX \gt 0</m>. Or, tout calcul fait, on a <m>XAY = YA_pY</m> et ainsi <m>YA_pY \gt 0</m>. La matrice <m>A_p</m> est ainsi symétrique définie positive. Il est connu que dans ce cas, les valeurs propres de <m>A_p</m> sont <m>> 0</m> et par suite
+                        <me>
+                        \forall p \in [1; n], \det(A_p) \gt 0
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <title>Démonstration par récurrence</title>
+                <introduction>
+                    <p>
+                        Dans cette question, on démontre la réciproque par récurrence sur <m>n</m>.
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Traiter le cas où <m>n = 1</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Lorsque <m>n = 1</m>, une matrice <m>A = (\lambda)</m> d’ordre 1 est symétrique et elle est définie positive si et seulement si <m>\lambda \gt 0</m>.
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            On suppose maintenant que toute matrice symétrique d’ordre <m>n</m> vérifiant la propriété (CDP) est définie positive et on considère une matrice symétrique <m>A \in M_{n+1} (\mathbb{R})</m> vérifiant (CDP). On pose
+                            <me>
+                            A = \begin{pmatrix}
+                            A_n \amp  {}^tV \\
+                            V \amp  \alpha
+                            \end{pmatrix} \quad \text{avec } V \in M_{n,1} (\mathbb{R}) \quad \text{et } \alpha \in \mathbb{R}
+                            </me>
+                            Montrer que <m>\alpha - {}^tVA_n^{-1} V \gt 0</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Sachant que <m>A_n</m> est inversible, on a (en termes d’opérations par blocs)
+                            <me>
+                            \det(A) =
+                            \begin{vmatrix}
+                            A_n \amp  V \\
+                            {}^tV \amp  \alpha
+                            \end{vmatrix}
+                            \begin{vmatrix}
+                            I_n \amp  -A_n^{-1}V \\
+                            0 \amp  1
+                            \end{vmatrix}
+                            =
+                            \begin{vmatrix}
+                            A_n \amp  0 \\
+                            {}^tV \amp  \alpha - {}^tVA_n^{-1}V
+                            \end{vmatrix}
+                            </me>
+                            <me>
+                            \det A = (\alpha - {}^tVA_n^{-1}V) \det A_n
+                            </me>
+                            Et puisque <m>\det A \gt 0</m> et <m>\det A_n \gt 0</m>, alors
+                            <me>
+                            \alpha - {}^tVA_n^{-1}V \gt 0
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Déterminer <m>M \in M_n (\mathbb{R})</m>, <m>X \in M_{n,1} (\mathbb{R})</m> et <m>x \in \mathbb{R}</m> tels que
+                            <me>
+                            A = {}^tBB \quad \text{avec } \quad B = \begin{pmatrix}
+                            M \amp  X \\
+                            0 \amp  x
+                            \end{pmatrix}
+                            </me>
+                            puis conclure.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Posons <m>B = \begin{pmatrix}
+                            M \amp  X \\
+                            0 \amp  x
+                            \end{pmatrix}</m> où <m>M, X</m> et <m>x</m> sont des inconnues avec <m>M \in M_n(\mathbb{R})</m>.
+                            <me>
+                            A = ^t BB \iff \begin{pmatrix}
+                            A_n \amp  V \\
+                            {}^tV \amp  \alpha
+                            \end{pmatrix} = \begin{pmatrix}
+                            tM \amp  0 \\
+                            tX \amp  x
+                            \end{pmatrix} \begin{pmatrix}
+                            M \amp  X \\
+                            0 \amp  x
+                            \end{pmatrix}
+                            </me>
+                            <me>
+                            \iff \begin{pmatrix}
+                            A_n \amp  V \\
+                            {}^tV \amp  \alpha
+                            \end{pmatrix} = \begin{pmatrix}
+                            tMM \amp  tMX \\
+                            tXM \amp  tXX + x^2
+                            \end{pmatrix}
+                            </me>
+                            <me>
+                            \iff \begin{cases}
+                            tMM = A_n \\
+                            tMX = V \\
+                            tXX + x^2 = \alpha
+                            \end{cases}
+                            </me>
+                            Par hypothèse de récurrence, <m>A_n</m> est symétrique définie positive, donc il existe effectivement au moins une matrice inversible <m>M \in M_n(\mathbb{R})</m> telle que <m>A_n = ^tMM</m>. Posons ensuite
+                            <me>
+                            X = ^tM^{-1}V \quad x = (\alpha - ^tXX)^{1/2}
+                            </me>
+                            <me>
+                            = (\alpha - {}^tVA_n^{-1}V)^{1/2}
+                            </me>
+                            La définition de <m>x</m> étant possible grâce au résultat de la question précédente. On a alors <m>B</m> est inversible (<m>\det B = x \det M \neq 0</m>) et <m>^tBB = A</m>. On en déduit que <m>A</m> est symétrique définie positive. En conclusion,
+                            <me>
+                            \text{Si } \det A_p \gt 0 \text{ pour tout } p \in [1; n] \text{, alors la matrice symétrique } A \text{ est définie positive.}
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+
+
+
+
+            
+            <exercise>
+                <title>Propriétés des valeurs propres</title>
+                <introduction>
+                    <p>
+                        On suppose dans cette question que <m>A</m> admet <m>n</m> valeurs propres distinctes et on considère une BON <m>(V_1, V_2, \ldots, V_n)</m> de <m>M_{n,1} (\mathbb{R})</m> formée de vecteurs propres de <m>A</m> avec <m>AV_k = \lambda_k V_k</m> pour tout <m>k \in [1; n]</m>.
+                        On pose <m>B = A_{n-1}</m> et pour tout <m>x \in \mathbb{R} \setminus \text{Sp}(A)</m>,
+                        <me>
+                        r(x) = \frac{\text{det}(xI_{n-1} - B)}{\text{det}(xI_n - A)}
+                        </me>
+                        On note <m>(E_1, E_2, \ldots, E_n)</m> la base canonique de <m>M_{n,1} (\mathbb{R})</m>.
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que pour tout <m>x \in \mathbb{R} \setminus \text{Sp}(A)</m>,
+                            <me>
+                            r(x) = \langle (xI_n - A)^{-1} E_n, E_n \rangle
+                            </me>
+                            et en déduire que
+                            <me>
+                            r(x) = \sum_{k=1}^{n} \frac{\langle E_n, V_k \rangle^2}{x - \lambda_k}
+                            </me>
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Puisque <m>x \notin \text{Sp}(A)</m>, alors la matrice <m>xI_n - A</m> est inversible. Le scalaire <m>s(x) = \langle (xI_n - A)^{-1} E_n, E_n \rangle</m> est le coefficient d’indice <m>(n, n)</m> de la matrice <m>(xI_n - A)^{-1}</m>. En utilisant l’expression <m>(xI_n - A)^{-1} = \frac{\text{com}(xI_n - A)}{\text{det}(xI_n - A)}</m>, on en déduit que
+                            <me>
+                            s(x) = (-1)^{n+n}\frac{\Delta_{n,n}(xI_n - A)}{\text{det}(xI_n - A)} = \frac{\text{det}(xI_{n-1} - B)}{\text{det}(xI_n - A)} = r(x)
+                            </me>
+                            soit
+                            <me>
+                            r(x) = \langle (xI_n - A)^{-1} E_n, E_n \rangle
+                            </me>
+                            Pour tout <m>k \in [1; n]</m>, <m>V_k</m> est un vecteur propre de <m>(xI_n - A)^{-1}</m> associé à la valeur propre <m>\frac{1}{x - \lambda_k}</m> :
+                            <me>
+                            (xI_n - A)^{-1} V_k = \frac{1}{x - \lambda_k} V_k
+                            </me>
+                            En écrivant <m>E_n = \sum_{k=1}^n \langle E_n, V_k \rangle V_k</m>, on obtient donc
+                            <me>
+                            r(x) = \sum_{k=1}^n \frac{\langle E_n, V_k \rangle^2}{x - \lambda_k}
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>r</m> est continue strictement décroissante sur chacun des intervalles composant son domaine de définition.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Quitte à changer l’ordre des vecteurs <m>V_1, V_2, \ldots, V_n</m>, on peut supposer que <m>\lambda_1 \lt \lambda_2 \lt \cdots \lt \lambda_n</m>. En dérivant l’expression de <m>r(x)</m> donnée en (3), on obtient pour tout <m>x \in D = \mathbb{R} \setminus \{\lambda_1, \ldots, \lambda_n\}</m>
+                            <me>
+                            r'(x) = -\sum_{k=1}^n \frac{\langle E_n, V_k \rangle^2}{(x - \lambda_k)^2}
+                            </me>
+                            On a donc <m>r'(x) \leq 0</m> pour tout <m>x \in D</m> avec
+                            <me>
+                            r(x) = 0 \implies \forall k \in [1; n], \langle E_n, V_k \rangle = 0 \implies E_n = 0
+                            </me>
+                            Ce qui est bien sûr exclu. Alors <m>r</m> est strictement décroissante sur tout intervalle de <m>D</m>.
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que si <m>E_n</m> n’est orthogonal à aucun des vecteurs <m>V_k</m>, alors <m>B</m> admet <m>n-1</m> valeurs propres distinctes et qu’entre deux valeurs propres de <m>A</m>, il y a exactement une valeur propre de <m>B</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            On suppose que <m>\langle E_n, V_k \rangle \neq 0</m> pour tout <m>k \in [1; n]</m>. Si <m>k \in [1; n]</m>, alors
+                            <me>
+                            \lim_{\lambda_k^+ \to +\infty} r = +\infty \quad \lim_{\lambda_{k+1}^- \to -\infty} r = -\infty
+                            </me>
+                            Selon le théorème des valeurs intermédiaires, <m>r</m> admet au moins un zéro dans <m>]\lambda_k, \lambda_{k+1}[</m>. Ce zéro est unique puisque <m>r</m> est strictement décroissante sur cet intervalle. Mais puisque par définition <m>r(x) = \frac{\text{det}(xI_{n-1} - B)}{\text{det}(xI_n - A)}</m>, alors
+                            <me>
+                            B \text{ admet exactement une valeur propre entre chaque deux valeurs propres successives de } A
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Que peut-on dire si pour certains <m>k</m>, on a <m>\langle E_n, V_k \rangle = 0</m> ?
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            La fraction rationnelle <m>F = \frac{X_B}{X_A}</m> se décompose en éléments simples sous la forme
+                            <me>
+                            F = \sum_{k=1}^{n} \frac{\langle E_n, V_k \rangle^2}{X - \lambda_k}
+                            </me>
+                            Dire que pour un certain <m>k \in [1; n]</m>, <m>\langle E_n, V_k \rangle = 0</m> revient à dire que <m>\lambda_k</m> n’est pas un pôle de <m>F</m>. Ce serait donc une racine de <m>X_B</m> aussi.
+                        </p>
+                        <p>
+                            <strong>N.B.</strong> Ce cas est tout à fait possible. Penser au cas d’une matrice diagonale à éléments diagonaux distincts par exemple. Les racines de <m>X_B</m> sont alors toutes des racines de <m>X_A</m>.
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+        
+        </subexercises>
+
+        
+        <subexercises>
+            <title>Produit scalaire associé à une forme linéaire et étude des propriétés d’une spo</title>
+            <introduction>
+                <p>
+                    On pose
+                    <me>
+                    \forall (P, Q) \in (\mathbb{R}[X])^2 \quad B(P, Q) = L(PQ)
+                    </me>
+                    Nous allons étudier les propriétés de ce produit scalaire et de la suite de polynômes orthogonaux associée.
+                </p>
+            </introduction>
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>B</m> est un produit scalaire de <m>\mathbb{R}[X]</m> si et seulement si
+                        <me>
+                        \forall P \in \mathbb{R}[X] \setminus \{0\} \quad L(P^2) \gt 0
+                        </me>
+                        Nous dirons alors que la forme linéaire <m>L</m> est définie positive.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        L’application <m>B</m> est bilinéaire symétrique. Elle est définie positive si et seulement si
+                        <me>
+                        \forall P \in \mathbb{R}[X] \setminus \{0\}, \, L(P^2) \gt 0
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout polynôme <m>P = \sum_{k=0}^n a_k X^k</m>,
+                        <me>
+                        L(P^2) = {}^{\text{t}}V H_n V \quad \text{où} \quad V = {}^{\text{t}}(\begin{bmatrix} a_0 \amp  a_1 \amp  \cdots \amp  a_n \end{bmatrix})
+                        </me>
+                        En déduire que <m>L</m> est définie positive si et seulement si <m>\Delta_n \gt 0</m> pour tout <m>n \in \mathbb{N}</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        C’est une expression déjà justifiée et utilisée dans ce corrigé :
+                        <me>
+                        \forall (P, Q) \in \mathbb{R}_n[X]^2, \, L(PQ) = UH_nV \quad \text{où } U = [P]_B^n, \, V = [Q]_B^n,
+                        </me>
+                        <m>B</m> étant bilinéaire symétrique, il est un produit scalaire de <m>\mathbb{R}[X]</m> si et seulement s’il est défini positif sur chaque sous-espace <m>\mathbb{R}_n[X]</m>. L’expression ci-dessus indique que <m>B</m> est définie positif sur <m>\mathbb{R}_n[X]</m> si et seulement si la matrice symétrique <m>H_n</m> est définie positive pour tout <m>n \in \mathbb{N}</m>. D’après la partie précédente, ceci équivaut à <m>\Delta_n \gt 0</m> pour tout <m>n \in \mathbb{N}</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <exercise>
+                <statement>
+                    <p>
+                On suppose dans la suite que <m>L</m> est définie positive et on considère une spo <m>(P_n)_n</m> relative à <m>L</m>.
+            </p>
+                    <p>
+                        Montrer que le polynôme <m>P_n</m> est scindé à racines simples pour tout <m>n \geq 1</m>. Montrer que <m>P_n</m> et <m>P_{n-1}</m> n’ont aucune racine en commun.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Puisque <m>\Delta_n \neq 0</m> pour tout <m>n \in \mathbb{N}</m>, alors selon la question (solution 1.5 [p. 7]) la suite <m>(P_n)_n</m> est une spo.
+                        Nous allons commencer par montrer le résultat suivant :
+                    </p>
+                    <p>
+                        <strong>LEMME :</strong> Si <m>P</m> est un polynôme réel partout positif sur <m>\mathbb{R}</m>, alors il existe deux polynômes réels <m>P_1, P_2</m> tels que <m>P = P_1^2 + P_2^2</m>.
+                    </p>
+                    <p>
+                        <strong>DÉM. :</strong> Supposons donc que <m>P</m> est un polynôme réel partout positif sur <m>\mathbb{R}</m>. Les racines réelles éventuelles de <m>P</m> sont donc toutes de multiplicités paires. Celles non réelles sont deux à deux conjuguées. Le théorème de la décomposition en facteurs irréductibles permet alors d’écrire <m>P</m> sous la forme
+                        <me>
+                        P = Q^2 R \overline{R}
+                        </me>
+                        où <m>Q^2</m> rassemble les racines réelles de <m>P</m> et <m>R \overline{R}</m> ses racines complexes non réelles. Ce qui nous permet ensuite d’écrire
+                        <me>
+                        P = \frac{1}{4}((R + \overline{R})^2 - (R - \overline{R})^2)Q^2 \\
+                        = \frac{1}{4}((R + \overline{R})^2 + (i(R - \overline{R}))^2)Q^2 \\
+                        = P_1^2 + P_2^2
+                        </me>
+                        où les polynômes <m>P_1 = \frac{1}{2}(R + \overline{R})Q</m> et <m>P_2 = \frac{i}{2}(R - \overline{R})Q</m> sont bien réels.
+                    </p>
+                    <p>
+                        Revenons maintenant aux polynômes <m>P_n</m>. Soit <m>n \in \mathbb{N}^*</m>. <m>P_0</m> est constant non nul et on a <m>P_0 L(P_n) = L(P_0 P_n) = 0</m> donc <m>L(P_n) = 0</m>. Supposons que <m>P_n</m> garde un signe constant sur <m>\mathbb{R}</m>. Quitte à le remplacer par <m>-P_n</m>, on peut supposer que ce signe est positif. Il existe donc deux polynômes réels <m>Q_1</m> et <m>Q_2</m> tels que <m>P_n = Q_1^2 + Q_2^2</m> et ainsi
+                        <me>
+                        L(Q_1^2) + L(Q_2^2) = 0
+                        </me>
+                        <m>L</m> étant définie positive, ceci n’est possible que si <m>Q_1 = Q_2 = 0</m>. Ce qui est impossible car <m>P_n \neq 0</m>.
+                    </p>
+                    <p>
+                        Ainsi, <m>P_n</m> ne peut garder un signe constant sur <m>\mathbb{R}</m>, ce qui implique qu’il admet au moins une racine réelle de multiplicité impaire. La justification s’achève ensuite de la même façon que dans le cas d’une spo d’un espace <m>\mathcal{L}_\omega^2(I)</m>.
+                    </p>
+                </solution>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer l’existence de suites <m>(a_n)_n, (b_n)_n</m> et <m>(c_n)_{n \geq 1}</m> telles que
+                        <me>
+                        \begin{cases}
+                        X P_0 = a_0 P_1 + b_0 P_0 \\
+                        \forall n \in \mathbb{N}^*, \quad X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1}
+                        \end{cases}
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Il découle de l’aspect spo de la suite <m>(P_n)</m> qu’il existe des suites <m>(a_n)_n, (b_n)_n, (c_n)_n \in \mathbb{R}</m> telles que
+                        <me>
+                        \begin{cases}
+                        X P_0 = a_0 P_1 + b_0 P_0 \\
+                        \forall n \in \mathbb{N}^*, \quad X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1}
+                        \end{cases}
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+       
+
+       
+            <exercise>
+                <title>Propriétés de la suite orthonormale</title>
+                <introduction>
+                    <p>
+                        On suppose dans cette question que <m>L(P_n^2) = 1</m> pour tout <m>n \in \mathbb{N}</m>. Cela signifie que la suite <m>(P_n)_n</m> est orthonormale pour le produit scalaire <m>B</m>.
+                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>c_n = a_{n-1}</m> pour tout <m>n \in \mathbb{N}^*</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Sachant que <m>X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1}</m>, on a
+                            <me>
+                            a_n = B(X P_n, P_{n+1}) \quad c_n = B(X P_n, P_{n-1})
+                            </me>
+                            Mais puisque <m>B(X P_n, P_{n-1}) = B(X P_{n-1}, P_n)</m>, alors <m>c_n = a_{n-1}</m>.
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            On pose dans la suite
+                            <me>
+                            S_n = \begin{pmatrix}
+                            b_0 \amp  a_0 \amp  \cdots \amp  0 \\
+                            a_0 \amp  b_1 \amp  \cdots \amp  0 \\
+                            \vdots \amp  \vdots \amp  \ddots \amp  a_{n-2} \\
+                            0 \amp  a_{n-2} \amp  b_{n-1}
+                            \end{pmatrix} \quad \text{et} \quad \forall \lambda \in \mathbb{R} \quad V_n(\lambda) = \begin{pmatrix}
+                            P_0(\lambda) \\
+                            \vdots \\
+                            P_{n-1}(\lambda)
+                            \end{pmatrix}
+                            </me>
+                            Calculer <m>(S_n - \lambda I_n) V_n(\lambda)</m> pour tout <m>\lambda \in \mathbb{R}</m> et en déduire que les valeurs propres de <m>S_n</m> sont exactement les racines de <m>P_n</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Les relations <m>X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1}</m> donnent ici
+                            <me>
+                            S_n V_n(\lambda) =
+                            \begin{pmatrix}
+                            \lambda P_0(\lambda) \\
+                            \lambda P_1(\lambda) \\
+                            \vdots \\
+                            \lambda P_{n-2}(\lambda) \\
+                            a_{n-2} P_{n-2}(\lambda) + b_{n-1} P_{n-1}(\lambda)
+                            \end{pmatrix}
+                            =
+                            \begin{pmatrix}
+                            \lambda P_0(\lambda) \\
+                            \lambda P_1(\lambda) \\
+                            \vdots \\
+                            \lambda P_{n-2}(\lambda) \\
+                            \lambda P_{n-1}(\lambda) - a_{n-1} P_n(\lambda)
+                            \end{pmatrix}
+                            </me>
+                            <me>
+                            S_n V_n(\lambda) = \lambda V_n(\lambda) - a_{n-1} P_n(\lambda) E_n
+                            </me>
+                            où <m>E_n</m> est le dernier vecteur de la base canonique de <m>M_{n,1}(\mathbb{R})</m>.
+                        </p>
+                        <p>
+                            Pour toute racine <m>\lambda</m> de <m>P_n</m>, on a donc <m>S_n V_n(\lambda) = \lambda V_n(\lambda)</m>. Ayant <m>P_0(\lambda) \neq 0</m>, le vecteur <m>V_n(\lambda)</m> est non nul et donc <m>\lambda</m> est une valeur propre de <m>S_n</m> et <m>V_n(\lambda)</m> est un vecteur propre associé. Puisque <m>P_n</m> est scindé à racines simples et <m>S_n</m> est une matrice carrée d’ordre <m>n</m>, alors ce sont les seules valeurs propres de <m>S_n</m>.
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Montrer qu’entre deux racines de <m>P_{n+1}</m>, il y a exactement une racine de <m>P_n</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Les valeurs propres de <m>S_n</m> et <m>S_{n+1}</m> sont entrelacées. Il en est de même des racines de <m>P_n</m> et <m>P_{n+1}</m>.
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>
+                        Généraliser le résultat de la question précédente à une spo quelconque (sans les conditions <m>L(P_n^2) = 1</m>).
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Le résultat de la question précédente est valable pour la suite <m>(Q_n)_n</m> lorsque on pose pour tout <m>n \in \mathbb{N}</m>,
+                        <me>
+                        Q_n = \frac{P_n}{L(P_n^2)}
+                        </me>
+                        <m>P_n</m> étant associé à <m>Q_n</m>, il en a les mêmes racines. Les racines de <m>P_n</m> et <m>P_{n+1}</m> sont donc entrelacées.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+    </exercises>
+</section>

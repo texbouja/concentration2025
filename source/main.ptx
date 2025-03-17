@@ -7,7 +7,10 @@
     <title>Concentration</title>
     <subtitle>Mars 2025</subtitle>
 
-    <introduction>
+    
+      <chapter>
+        <title> Polynômes orthogonaux </title>
+        <introduction>
             <p>
                 Le premier problème est consacré à quelques propriétés communes aux différentes familles de polynômes orthogonaux ainsi qu’à leurs justifications dans un cadre global. Le deuxième sujet étudie, au travers d’exemples, les opérateurs différentiels associés aux polynômes orthogonaux usuels. Le troisième donne une condition suffisante pour qu’une famille de polynômes orthogonaux associés à un poids <m>\omega</m> donné soit totale. Le dernier propose une généralisation de la notion de suite de polynômes orthogonaux associée à un produit scalaire et donne une condition nécessaire et suffisante pour qu’une telle suite existe.
             </p>
@@ -15,12 +18,11 @@
                 Dans un espace préhilbertien <m>E</m>, une suite <m>(e_n)_n</m> de vecteurs de <m>E</m> est dite totale si le sev <m>V = \text{vect}\{e_n \mid n \in \mathbb{N}\}</m> est dense dans <m>E</m>.
             </p>
       </introduction>
-      <chapter>
-        <title> Polynômes orthogonaux </title>
           <xi:include href="./polorth/prob1.ptx"/>
           <xi:include href="./polorth/prob2.ptx"/>
           <xi:include href="./polorth/prob3.ptx"/>
           <xi:include href="./polorth/prob4.ptx"/>
+          <xi:include href="./polorth/prob5.ptx"/>
       </chapter>
       
       

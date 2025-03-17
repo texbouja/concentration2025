@@ -1,6 +1,8 @@
 <section>
-    <title>Problème 4 : Approximation ponctuelle par des polynômes orthogonaux</title>
-    <exercises>
+    <title>Approximation ponctuelle par des polynômes orthogonaux</title>
+    <exercises><title>Problème 4</title>
+    
+    
         <introduction>
             <p>
                 Dans ce problème, on étudie la possibilité d’effectuer une approximation ponctuelle (au sens de la convergence simple) d’un élément de <m>\mathcal{L}^2_{\omega}(I)</m> par des fonctions polynomiales s’exprimant à l’aide de polynômes orthogonaux. Soit <m>(P_n)_n</m> une suite de polynômes orthogonaux de <m>\mathcal{L}^2_{\omega}(I)</m>. On conserve sous sa forme l’équation de récurrence (E.R)
@@ -168,6 +170,161 @@
                         </p>
                     </solution>
                 </task>
+            </exercise>
+        </subexercises>
+
+                <!-- Partie 2 : Le problème de l'approximation ponctuelle -->
+        <subexercises>
+            <title>Le problème de l'approximation ponctuelle</title>
+            <introduction>
+                <p>
+                    On suppose que la suite <m>(P_n)_n</m> est totale et on note <m>S_n</m> la projection orthogonale de <m>\mathcal{L}^2_{\omega}(I)</m> sur le sous-espace vectoriel <m>\mathcal{P}(I)_n</m> formé des fonctions polynomiales de degré inférieur ou égal à <m>n</m>.
+                </p>
+            </introduction>
+            
+            <!-- Question 4.5 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>f \in \mathcal{L}^2_{\omega}(I)</m>
+                        <me>
+                        \forall x \in I \quad S_n(f)(x) = \int_I K_n(x, t) f(t) \omega(t) dt
+                        </me>
+                        Que donne ce résultat si on prend <m>f = 1</m> ?
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>n \in \mathbb{N}</m>. On a
+                        <me>
+                        S_n(f) = \sum_{k=0}^n \frac{\langle P_k, f \rangle}{||P_k||^2} P_k
+                        </me>
+                        Donc pour tout <m>x \in I</m>
+                        <me>
+                        S_n(f)(x) = \sum_{k=0}^n \frac{P_k(x)}{||P_k||^2} \int_I \omega(t) P_k(t) f(t) dt
+                        </me>
+                        <me>
+                        = \int_I \left( \sum_{k=0}^n \frac{P_k(x) P_k(t)}{||P_k||^2} \right) \omega(t) f(t) dt
+                        </me>
+                        <me>
+                        S_n(f)(x) = \int_I \omega(t) f(t) K_n(x,t) dt
+                        </me>
+                    </p>
+                    <p>
+                        Ensuite, si <m>f = 1</m> alors <m>f \in \mathcal{P}_n(I)</m> et donc <m>S_n(f) = f</m> pour tout <m>n \geq 1</m>. Ce qui signifie que
+                        <me>
+                        \forall n \geq 1, \quad \forall x \in I, \quad \int_I \omega(t) K_n(x,t) dt = 1
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 4.6 -->
+            <exercise>
+                <statement>
+                    <p>
+                        On suppose désormais que <m>f</m> est un élément de classe <m>C^1</m> de <m>\mathcal{L}^2_{\omega}(I)</m>. On fixe <m>x</m> dans <m>I</m> et on définit la fonction <m>g_x</m> sur <m>I</m> par
+                        <me>
+                        g_x(t) = 
+                        \begin{cases} 
+                        \frac{f(t)-f(x)}{t-x} \amp \text{si } t \neq x \\
+                        f'(x) \amp \text{si } t = x 
+                        \end{cases}
+                        </me>
+                        Montrer que <m>g_x</m> est un élément de <m>\mathcal{L}^2_{\omega}(I)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        <m>f</m> est de classe <m>C^1</m> sur <m>I</m> donc <m>g_x</m> est continue sur <m>I</m>. Sa continuité en <m>x</m> implique l’existence d’un réel <m>\delta \gt 0</m> tel que
+                        <me>
+                        \forall t \in I \cap [x - \delta, x + \delta[, |g_x(t)| \leq |f'(x)| + 1]
+                        </me>
+                        On pose <m>J = I \cap [x - \delta, x + \delta[</m>. On peut ensuite écrire
+                        <me>
+                        \forall t \in I \setminus J, |g_x(t)| \leq \frac{1}{\delta} |f(t) - f(x)| \leq \frac{1}{\delta} |f(t)| + \frac{1}{\delta} |f(x)|
+                        </me>
+                        Si on pose maintenant <m>M = 1 + |f'(x)| + \frac{1}{\delta} |f(x)|</m>, alors
+                        <me>
+                        \forall t \in I, |g_x(t)| \leq M + \frac{1}{\delta} |f(t)|
+                        </me>
+                        La fonction <m>t \mapsto M + \frac{1}{\delta} |f(t)|</m> est un élément de <m>\mathcal{L}^2_\omega(I)</m> donc <m>g_x \in \mathcal{L}^2_\omega(I)</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 4.7 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>x \in I</m>,
+                        <me>
+                        S_n(f)(x) - f(x) = \frac{a_n}{||P_n||^2} (P_n(x)\langle P_{n+1}, g_x \rangle - P_{n+1}(x)\langle P_n, g_x \rangle)
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Selon la question précédente et la définition de <m>K_n(x, t)</m>, on a
+                        <me>
+                        S_n(f)(x) - f(x) = \int_I \omega(t) K_n(x, t) (f(t) - f(x)) dt
+                        </me>
+                        <me>
+                        = \frac{a_n}{||P_n||^2} \int_I \omega(t) \left( P_{n+1}(t) P_n(x) - P_{n+1}(x) P_n(t) \right) g_x(t) dt
+                        </me>
+                        <me>
+                        S_n(f)(x) - f(x) = a_n \frac{P_n(x) \langle P_{n+1}, g_x \rangle - P_{n+1}(x) \langle P_n, g_x \rangle}{||P_n||^2}
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 4.8 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Justifier que la suite <m>(\langle P_n, g_x \rangle)_n</m> converge vers 0 et en déduire que si la suite de terme
+                        <me>
+                        \delta_n = \frac{\lambda_n! ||P_{n+1}||}{\lambda_{n+1}! ||P_n||} \left( \frac{||P_n(x)||}{||P_n||} + \frac{||P_{n+1}(x)||}{||P_{n+1}||} \right)
+                        </me>
+                        est bornée alors <m>(S_n(f)(x))_n</m> converge vers <m>f(x)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        La famille <m>(P_n)_n</m> étant orthogonale et la fonction <m>g_x</m> un élément de <m>\mathcal{L}^2_\omega(I)</m>, on a selon l’inégalité de Bessel
+                        <me>
+                        \forall n \in \mathbb{N}^*, \sum_{k=0}^n \frac{\langle P_k, g_x \rangle^2}{||P_k||^2} \leq ||g_x||^2
+                        </me>
+                        La série de termes réels positifs <m>\sum \frac{\langle P_n, g_x \rangle^2}{||P_n||^2}</m> est donc convergente. Par condition nécessaire de convergence d’une série, on a donc
+                        <me>
+                        \frac{\langle P_n, g_x \rangle^2}{||P_n||^2} \rightarrow 0
+                        </me>
+                        Soit <m>\varepsilon \gt 0</m> et soit alors <m>N \in \mathbb{N}</m> tel que
+                        <me>
+                        \forall n \geq N, |\langle P_n, g_x \rangle| \leq \varepsilon ||P_n||
+                        </me>
+                        On a alors selon la question précédente pour tout <m>n \geq N</m>
+                        <me>
+                        |S_n(f)(x) - f(x)| \leq \varepsilon \frac{|a_n|}{||P_n||^2} \left( |P_n(x)| ||P_{n+1}|| + |P_{n+1}(x)| ||P_n|| \right)
+                        </me>
+                        <me>
+                        \leq \varepsilon \frac{|a_n|}{\lambda_{n+1}} \frac{||P_{n+1}||}{||P_n||} \left( \frac{|P_n(x)|}{||P_n||} + \frac{|P_{n+1}(x)|}{||P_{n+1}||} \right)
+                        </me>
+                        Si on pose plutôt
+                        <me>
+                        \delta_n(x) = \frac{|a_n|}{\lambda_{n+1}} \frac{||P_{n+1}||}{||P_n||} \left( \frac{|P_n(x)|}{||P_n||} + \frac{|P_{n+1}(x)|}{||P_{n+1}||} \right)
+                        </me>
+                        alors
+                        <me>
+                        \forall n \geq N, |S_n(f)(x) - f(x)| \leq \varepsilon \delta_n(x)
+                        </me>
+                        et ainsi
+                        <me>
+                        \text{Si } f \text{ est de classe } C^1 \text{ sur } I, \text{ alors la suite } \left( S_n(f)(x) \right)_n \text{ converge vers } x \text{ en tout } x \in I \text{ pour lequel la suite } \left( \delta_n(x) \right)_n \text{ est bornée.}
+                        </me>
+                    </p>
+                </solution>
             </exercise>
         </subexercises>
     </exercises>
