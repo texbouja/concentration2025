@@ -1,0 +1,174 @@
+<section>
+    <title>Problème 4 : Approximation ponctuelle par des polynômes orthogonaux</title>
+    <exercises>
+        <introduction>
+            <p>
+                Dans ce problème, on étudie la possibilité d’effectuer une approximation ponctuelle (au sens de la convergence simple) d’un élément de <m>\mathcal{L}^2_{\omega}(I)</m> par des fonctions polynomiales s’exprimant à l’aide de polynômes orthogonaux. Soit <m>(P_n)_n</m> une suite de polynômes orthogonaux de <m>\mathcal{L}^2_{\omega}(I)</m>. On conserve sous sa forme l’équation de récurrence (E.R)
+                <me>
+                X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1} \tag{E.R}
+                </me>
+                On note en plus <m>\lambda_n</m> le coefficient dominant de <m>P_n</m> et on pose <m>\rho_n = \lambda_n / ||P_n||^2</m>.
+            </p>
+        </introduction>
+        
+        <!-- Partie 1 : Noyaux relatifs à une suite de polynômes orthogonaux -->
+        <subexercises>
+            <title>Noyaux relatifs à une suite de polynômes orthogonaux</title>
+            <introduction>
+                <p>
+                    On pose pour tout <m>(x, t) \in I^2</m> tel que <m>x \neq t</m>
+                    <me>
+                    K_n(x, t) = \frac{a_n}{||P_n||^2} \frac{P_{n+1}(t) P_n(x) - P_{n+1}(x) P_n(t)}{t - x}
+                    </me>
+                    <m>K_n</m> est appelée noyau d’ordre <m>n</m> de la suite <m>(P_n)_n</m>.
+                </p>
+            </introduction>
+            
+            <!-- Question 4.1 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>K_n</m> est une fonction polynomiale en <m>x</m> et <m>t</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Si on fixe <m>t</m>, la fonction <m>x \mapsto P_{n+1}(t) P_n(x) - P_{n+1}(x) P_n(t)</m> est polynomiale et s’annule pour <m>x = t</m>. Elle est donc divisible par <m>x - t</m>. Ainsi, <m>K_n(x, t)</m> est une expression polynomiale en <m>(x, t)</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 4.2 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que si <m>Q</m> est un polynôme de degré <m>n</m> et de coefficient dominant <m>\lambda</m> alors <m>\lambda_n \langle P_n, Q \rangle = \lambda ||P_n||^2</m> et en déduire que
+                        <me>
+                        a_n = \frac{\lambda_n}{\lambda_{n+1}} \quad \text{et} \quad c_n = \frac{\rho_{n-1}}{\rho_n}
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>Q</m> un polynôme de degré <m>n</m> et de coefficient dominant <m>\lambda</m>. Le polynôme <m>R = \lambda P_n - \lambda_Q</m> est de degré <m>\lt n</m> donc <m>\langle P_n, R \rangle = 0</m>. Ce qui donne :
+                        <me>
+                        \lambda_n \langle P_n, Q \rangle = \lambda ||P_n||^2
+                        </me>
+                        En utilisant cette relation, on peut montrer que
+                        <me>
+                        a_n = \frac{\lambda_n}{\lambda_{n+1}} \quad \text{et} \quad c_n = \frac{\rho_{n-1}}{\rho_n}
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 4.3 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>n \geq 1</m>
+                        <me>
+                        K_n(x, t) - K_{n-1}(x, t) = \frac{P_n(x) P_n(t)}{||P_n||^2}
+                        </me>
+                        et en déduire que
+                        <me>
+                        K_n(x, t) = \sum_{k=0}^{n} \frac{P_k(x) P_k(t)}{||P_k||^2}
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        On a
+                        <me>
+                        a_n(P_{n+1}(t)P_n(x) - P_{n+1}(x)P_n(t)) = P_n(x)(tP_n(t) - b_nP_n(t) - c_nP_{n-1}(t)) - P_n(t)(xP_n(x) - b_nP_n(x) - c_nP_{n-1}(x))
+                        </me>
+                        Comme <m>\frac{c_n}{||P_n||^2} = \frac{a_{n-1}}{||P_{n-1}||^2}</m>, alors
+                        <me>
+                        K_n(x, t) - K_{n-1}(x, t) = \frac{P_n(x) P_n(t)}{||P_n||^2}
+                        </me>
+                        Par ailleurs, <m>P_0 = \lambda_0</m> et en posant <m>P_1 = \lambda_1X + \alpha</m>, on a
+                        <me>
+                        K_0(x, t) = \frac{a_0(\frac{P_1(t) - P_1(x))\lambda_0}{\lambda_0^2}}{x - t} = \frac{\lambda_1}{\lambda_0} = 1
+                        </me>
+                        <me>
+                        K_0(x, t) = \frac{P_0(x) P_0(t)}{||P_0||^2}
+                        </me>
+                        On en déduit par télescopage que
+                        <me>
+                        K_n(x, t) = \sum_{k=0}^{n} \frac{P_k(x) P_k(t)}{||P_k||^2}
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 4.4 -->
+            <exercise>
+                <title>Une application</title>
+                <introduction>
+                    <p>
+                        Cette question explore une application du noyau <m>K_n</m>.
+                    </p>
+                </introduction>
+                
+                <!-- Sous-question 4.4.1 -->
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>K_n(x, x) \gt 0</m> pour tout <m>x \in \mathbb{R}</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            On a
+                            <me>
+                            K_n(x, x) = \sum_{k=0}^{n} \frac{P_k(x)^2}{||P_k||^2} \gt \frac{P_0(x)^2}{||P_0||^2} \gt 0
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                
+                <!-- Sous-question 4.4.2 -->
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que
+                            <me>
+                            K_n(x, x) = \frac{a_n}{||P_n||^2} (P_{n+1}^{\prime}(x) P_n(x) - P_{n+1}(x) P_n^{\prime}(x))
+                            </me>
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Si <m>x \neq t</m>, on peut écrire
+                            <me>
+                            K_n(x, t) = \frac{a_n}{||P_n||^2} \left( P_n(x) \frac{P_{n+1}(t) - P_{n+1}(x)}{t - x} + P_{n+1}(x) \frac{P_n(t) - P_n(x)}{t - x} \right)
+                            </me>
+                            En faisant tendre <m>t</m> vers <m>x</m>, on obtient
+                            <me>
+                            K_n(x, x) = \frac{a_n}{||P_n||^2} \left( P_n(x) P_{n+1}^{\prime}(x) - P_{n+1}(x) P_n^{\prime}(x) \right)
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                
+                <!-- Sous-question 4.4.3 -->
+                <task>
+                    <statement>
+                        <p>
+                            En déduire que si <m>n \geq 1</m> alors entre deux racines de <m>P_{n+1}</m> il y a exactement une racine de <m>P_n</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Soit <m>n \geq 1</m>. Notons <m>x_1 \lt x_2 \lt \cdots \lt x_{n+1}</m> les racines (simples) de <m>P_{n+1}</m> et considérons la fonction rationnelle <m>F_n = \frac{P_n}{P_{n+1}}</m>. <m>F_n</m> est de classe <m>C^1</m> sur chaque intervalle <m>[x_k, x_{k+1}]</m> et
+                            <me>
+                            F_n^{\prime}(x) = -\frac{a_n K_n(x, x)}{||P_n||^2 P_{n+1}(x)^2}
+                            </me>
+                            Puisque <m>K_n(x, x) \gt 0</m> alors <m>F_n</m> est strictement monotone sur <m>[x_k, x_{k+1}]</m> et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre <m>x_k</m> et <m>x_{k+1}</m>. Alors <m>P_n</m> admet une racine unique entre <m>x_k</m> et <m>x_{k+1}</m>.
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+        </subexercises>
+    </exercises>
+</section>

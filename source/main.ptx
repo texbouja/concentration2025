@@ -2,17 +2,29 @@
 
 <pretext xml:lang="fr-FR" xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- we first include a file which contains the docinfo element: -->
-  <xi:include href="./docinfo.ptx"/>
-  <book xml:id="eqdiff" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>''Equations différentielles linéairres</title>
-    <subtitle>Classes MP/MP*</subtitle>
+  <xi:include href="./docinfo.ptx" />
+  <book xml:id="concentration2025" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Concentration</title>
+    <subtitle>Mars 2025</subtitle>
 
-    <!-- Include frontmatter --> 
-    <xi:include href="./frontmatter.ptx" />
-    <!-- Include chapters -->
-    <xi:include href="./ch-themes-classiques.ptx"/>
-    <xi:include href="./ch-exercices.ptx" />
+    <introduction>
+            <p>
+                Le premier problème est consacré à quelques propriétés communes aux différentes familles de polynômes orthogonaux ainsi qu’à leurs justifications dans un cadre global. Le deuxième sujet étudie, au travers d’exemples, les opérateurs différentiels associés aux polynômes orthogonaux usuels. Le troisième donne une condition suffisante pour qu’une famille de polynômes orthogonaux associés à un poids <m>\omega</m> donné soit totale. Le dernier propose une généralisation de la notion de suite de polynômes orthogonaux associée à un produit scalaire et donne une condition nécessaire et suffisante pour qu’une telle suite existe.
+            </p>
+            <p>
+                Dans un espace préhilbertien <m>E</m>, une suite <m>(e_n)_n</m> de vecteurs de <m>E</m> est dite totale si le sev <m>V = \text{vect}\{e_n \mid n \in \mathbb{N}\}</m> est dense dans <m>E</m>.
+            </p>
+      </introduction>
+      <chapter>
+        <title> Polynômes orthogonaux </title>
+          <xi:include href="./polorth/prob1.ptx"/>
+          <xi:include href="./polorth/prob2.ptx"/>
+          <xi:include href="./polorth/prob3.ptx"/>
+          <xi:include href="./polorth/prob4.ptx"/>
+      </chapter>
+      
+      
     <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
+    <!-- <xi:include href="./backmatter.ptx" /> -->
   </book>
 </pretext>

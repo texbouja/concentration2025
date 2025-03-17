@@ -1,0 +1,526 @@
+<section>
+    <title>Étude de densité</title>
+    <exercises><title>Problème 3</title>
+        <introduction>
+            <p>
+                On reprend toutes les notations du premier problème et on considère une suite de polynômes orthogonaux de <m>\mathcal{L}^2_{\omega}(I)</m>.
+            </p>
+        </introduction>
+        
+        <!-- Partie 1 : Le cas où l’intervalle I est borné -->
+        <subexercises>
+            <title>Le cas où l’intervalle I est borné</title>
+            <introduction>
+                <p>
+                    Cette partie traite du cas où l'intervalle <m>I</m> est borné.
+                </p>
+            </introduction>
+            
+            <!-- Question 3.1 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que si <m>I</m> est un segment alors <m>(P_n)_n</m> est une famille totale de <m>\mathcal{L}^2_{\omega}(I)</m> (penser au théorème de Weierstrass). On suppose dans le reste de cette partie que <m>I</m> est borné.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Si <m>I</m> est un segment <m>[a, b]</m>, alors, selon le théorème de Weierstrass, <m>\mathcal{P}(I)</m> est dense dans <m>\mathcal{L}^2_{\omega}(I)</m> pour la norme <m>||.||_\infty</m>. Puisque pour tout <m>f \in \mathcal{L}^2_{\omega}(I)</m> on a <m>||f|| \leq \sqrt{b-a} ||f||_\infty</m>, alors <m>\mathcal{P}(I)</m> est dense dans <m>\mathcal{L}^2_{\omega}(I)</m> pour la norme <m>||.||</m>. Puisque <m>\mathcal{P}(I)</m> est engendré par la suite <m>(P_n)_n</m>, alors <m>(P_n)_n</m> est une famille orthogonale totale de <m>\mathcal{L}^2_{\omega}(I)</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 3.2 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>\mathcal{P}(I)</m> est dense dans le sous-espace <m>C</m> de <m>\mathcal{L}^2_{\omega}(I)</m> formé des fonctions prolongeables par continuité sur <m>I</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Supposons que <m>I</m> est borné mais qu’il n’est pas un segment. Notons <m>a</m> et <m>b</m> ses extrémités. Soient <m>f \in \mathcal{L}^2_{\omega}(I)</m> et <m>\varepsilon \gt 0</m>. Puisque l’intégrale <m>\int_{a}^{b} \omega(x)f(x)^2 dx</m> est convergente, alors il existe <m>\delta \gt 0</m> voisin de 0 tel que
+                        <me>
+                        \int_{a}^{a+\delta} \omega(x)f(x)^2 dx + \int_{b-\delta}^b \omega(x)f(x)^2 dx \leq \varepsilon
+                        </me>
+                        <m>f</m> et <m>\omega</m> étant continues, et donc bornées, sur le segment <m>[a + \delta, b - \delta]</m>, soit
+                        <me>
+                        M = \sup_{x \in [a+\delta, b-\delta]} |f(x)| \quad K = \sup_{x \in [a+\delta, b-\delta]} |f(x)|
+                        </me>
+                        Considérons alors la fonction <m>g</m> continue sur le segment <m>[a, b]</m>, qui coïncide avec <m>f</m> sur <m>[a + \delta + \varepsilon, b - \delta - \varepsilon]</m>, qui est nulle sur <m>[a, a + \delta]</m> et <m>[b - \delta, \delta]</m> et qui est affine sur les intervalles <m>[a + \delta, a + \delta + \varepsilon]</m> et <m>[b - \delta - \varepsilon, b - \delta]</m>. On a dans ce cas
+                        <me>
+                        ||f - g||^2 = \int_{a}^{a+\delta} \omega(x)f(x)^2 dx + \int_{b-\delta}^b \omega(x)f(x)^2 dx + \int_{a+\delta}^{b+\delta} \omega(x)(f(x) - g(x))^2 dx + \int_{b-\delta}^b \omega(x)(f(x) - g(x))^2 dx
+                        </me>
+                        Pour tout <m>x \in [a + \delta, a + \delta + \epsilon] \cup [b - \delta - \epsilon, b - \delta]</m> on a
+                        <me>
+                        \omega(x)(f(x) - g(x))^2 \leq 2\omega(x)(f(x)^2 + g(x)^2) \leq 2KM + 2Kg(x)^2
+                        </me>
+                        D'autre part, <m>g(x) = \frac{f(a+\delta+\epsilon)}{\epsilon} (x - a - \delta)</m> quand <m>x \in [a + \delta, a + \delta + \epsilon]</m> donc
+                        <me>
+                        \int_{a+\delta}^{a+\delta+\epsilon} g(x)^2 dx \leq \frac{1}{3} Me^2
+                        </me>
+                        et de même
+                        <me>
+                        \int_{b-\delta-\epsilon}^{b-\delta} g(x)^2 dx \leq \frac{1}{3} Me^2
+                        </me>
+                        Au final
+                        <me>
+                        ||f - g||^2 \leq \left(1 + 4KM + \frac{2}{3} Me\right)\epsilon
+                        </me>
+                        On vient de démontrer que l’ensemble <m>C</m> des fonctions continues sur <m>I</m> prolongeables par continuité en <m>a</m> et en <m>b</m> est dense dans <m>\mathcal{L}^2_{\omega}(I)</m> pour sa norme <m>||.||</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 3.3 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>f \in \mathcal{L}^2_{\omega}(I)</m> et pour tout <m>\varepsilon \gt 0</m>, il existe <m>\varphi \in C</m> telle que <m>||f - \varphi||_2 \leq \varepsilon</m>. En déduire que la suite <m>(P_n)_n</m> est totale dans <m>\mathcal{L}^2_{\omega}(I)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Comme <m>\mathcal{P}(I)</m> est dense dans <m>C</m> pour la norme <m>||.||_\infty</m>, et donc pour <m>||.||</m>, alors il est dense dans <m>\mathcal{L}^2_{\omega}(I)</m> pour <m>||.||</m>.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+                <!-- Partie 2 : Condition nécessaire et contre-exemple -->
+        <subexercises>
+            <title>Condition nécessaire et contre-exemple</title>
+            <introduction>
+                <p>
+                    Cette partie traite des conditions nécessaires pour qu'une suite de polynômes orthogonaux soit totale, ainsi que d'un contre-exemple.
+                </p>
+            </introduction>
+            
+            <!-- Question 3.4 -->
+            <exercise><title>Une condition nécessaire</title>
+            
+            
+                <statement>
+                    <p>
+                         Montrer que si la suite <m>(P_n)_n</m> est totale alors <m>\mathcal{P}(I)^\perp</m> est le sous-espace vectoriel nul.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Supposons que <m>(P_n)_n</m> est totale dans <m>\mathcal{L}^2_{\omega}(I)</m>. Ce qui revient à dire que <m>\mathcal{P}(I)</m> est dense dans <m>\mathcal{L}^2_{\omega}(I)</m>. Soit <m>f \in \mathcal{P}(I)^\perp</m> et considérons une suite <m>(Q_n)_n</m> d'éléments de <m>\mathcal{P}(I)</m> qui converge vers <m>f</m>. On a alors
+                        <me>
+                        \forall n \in \mathbb{N}, \langle P_n, f \rangle = 0
+                        </me>
+                        La forme linéaire <m>g \in \mathcal{L}^2_{\omega}(I) \longmapsto \langle g, f \rangle</m> est continue (grâce à l'inégalité de Cauchy-Schwarz) donc en passant à la limite dans l'égalité précédente on obtient <m>\langle f, f \rangle = 0</m>. Par suite, <m>f = 0</m>. Alors
+                        <me>
+                        \boxed{\text{Si } (P_n)_n \text{ est totale alors } \mathcal{P}(I)^\perp = \{0\}}
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 3.5 : Contre-exemple -->
+            <exercise>
+                <title>Un contre-exemple</title>
+                <introduction>
+                    <p>
+                        On pose dans cette question <m>I = [0, +\infty[</m> et <m>\omega(t) = e^{-t^{1/4}}</m> pour tout <m>t \in I</m>.
+                    </p>
+                </introduction>
+                
+                <!-- Sous-question 3.5.1 -->
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>I</m> et <m>\omega</m> vérifient bien les conditions <m>(C.M)</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            <m>I</m> et <m>\omega</m> vérifient les conditions <m>(C.M)</m>.
+                        </p>
+                    </solution>
+                </task>
+                
+                <!-- Sous-question 3.5.2 -->
+                <task>
+                    <statement>
+                        <p>
+                            On considère la fonction <m>f : t \mapsto \sin(t^{1/4})</m>. Montrer que <m>f \in \mathcal{L}^2_\omega(I)</m> et que
+                            <me>
+                            \forall n \in \mathbb{N} \quad \int_{0}^{+\infty} t^n f(t) \omega(t) dt = 0
+                            </me>
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            On a pour tout <m>t \in [0, +\infty[</m>, <m>\omega(t)f(t)^2 \leq \omega(t)</m> donc <m>f \in \mathcal{L}^2_\omega(I)</m>. Soit <m>n \in \mathbb{N}</m>. En posant <m>t = u^4</m>, la fonction <m>u \longmapsto u^4</m> étant une bijection de classe <m>C^1</m> de <m>[0, +\infty[</m> et <m>t \longmapsto t^n \omega(t)f(t)</m> étant intégrable sur <m>I</m>, on a
+                            <me>
+                            \int_0^{+\infty} t^n \omega(t)f(t) dt = 4 \int_0^{+\infty} u^{4n+3} \sin u e^{-u} du
+                            </me>
+                            Des intégrations par parties (à justifier) donnent ensuite
+                            <me>
+                            \int_0^{+\infty} u^{4n+3} e^{-(1-i)u} du = \frac{4n+3}{1-i} \int_0^{+\infty} u^{4n+2} e^{-(1-i)u} du
+                            </me>
+                            <me>
+                            = \frac{(4n+3)!}{(1-i)^{4n+3}} \int_0^{+\infty} e^{-(1-i)u} du
+                            </me>
+                            <me>
+                            = \frac{(4n+3)!}{(1-i)^{4n+4}}
+                            </me>
+                            Or, il se trouve que <m>(1-i)^2 = -2i</m> et donc <m>(1-i)^4 = 4</m>. Ainsi, l’intégrale <m>\int_0^{+\infty} u^{4n+3} e^{-(1-i)u} du</m> est réelle et par suite
+                            <me>
+                            \forall n \in \mathbb{N}, \int_0^{+\infty} t^n \omega(t) f(t) dt = 0
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                
+                <!-- Sous-question 3.5.3 -->
+                <task>
+                    <statement>
+                        <p>
+                            En déduire qu’aucune suite de polynômes orthogonaux ne peut être totale dans <m>\mathcal{L}^2_\omega (I)</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            La fonction <m>f</m> est clairement non nulle et elle est dans <m>\mathcal{P}(I)^{\perp}</m>. D’après une question précédente, <m>\mathcal{P}(I)</m> n’est pas dense dans <m>\mathcal{L}^2_{\omega}(I)</m>.
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+        </subexercises>
+
+                <!-- Partie 3 : Injectivité de la transformée de Laplace -->
+        <subexercises>
+            <title>Injectivité de la transformée de Laplace</title>
+            <introduction>
+                <p>
+                    Cette partie traite de l'injectivité de la transformée de Laplace.
+                </p>
+            </introduction>
+            
+            <!-- Question 3.6 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Soit <m>E</m> l’ensemble des fonctions continues <m>g : [0, +\infty[ \longrightarrow \mathbb{R}</m> telles que
+                        <me>
+                        \forall x \in [0, +\infty[ \quad t \longmapsto g(t)e^{-xt} \text{ est intégrable}
+                        </me>
+                        et on pose pour tout <m>g \in E</m> et pour tout <m>x \in [0, +\infty[</m>
+                        <me>
+                        Lg(x) = \int_0^{+\infty} g(t)e^{-xt}dt
+                        </me>
+                        Montrer que <m>E</m> est un <m>\mathbb{R}</m>-ev et que l’application <m>L</m> est linéaire.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        <m>E</m> contient la fonction nulle et si <m>f, g \in E</m> et <m>\lambda \in \mathbb{R}</m> alors la fonction <m>t \mapsto (f(t) + \lambda g(t)) e^{-xt}</m> est intégrable pour tout <m>x \in [0, +\infty[</m> par combinaison linéaire de fonctions intégrables. Alors <m>E</m> est un sous-espace vectoriel de <m>C([0, +\infty[, \mathbb{R})</m>. La linéarité de <m>L</m> découle simplement de la linéarité de l’intégrale.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 3.7 : Injectivité de la transformée de Laplace -->
+            <exercise>
+                <title>Injectivité de la transformée de Laplace</title>
+                <introduction>
+                    <p>
+                        Soit <m>g \in E</m>. On pose pour tout <m>t \in [0, +\infty[</m>
+                        <me>
+                        G(t) = \int_0^t g(s)e^{-s}ds
+                        </me>
+                    </p>
+                </introduction>
+                
+                <!-- Sous-question 3.7.1 -->
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>G' \in E</m> et que :
+                            <me>
+                            \forall x \in [0, +\infty[ \quad \int_0^{+\infty} G(t)e^{-xt}dt = \frac{1}{x}Lg(x+1)
+                            </me>
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            <m>G</m> est de classe <m>C^1</m> sur <m>[0, +\infty[</m> et on a <m>G'(t) = g(t) e^{-t}</m>. La fonction <m>G</m> admet une limite finie en <m>+\infty</m> car <m>t \mapsto g(t) e^{-t}</m> est intégrable sur <m>[0, +\infty[</m>. Donc si <m>x \gt 0</m> alors <m>G(t) e^{-xt} \rightarrow 0</m>. L’intégrale <m>\int_0^{+\infty} g(t) e^{-(x+1)t}</m> est en outre convergente puisque <m>g \in E</m>. Une intégration par parties est ainsi possible. Elle donne pour tout <m>x \gt 0</m>
+                            <me>
+                            LG(x) = \frac{1}{x} \int_0^{+\infty} g(t) e^{-(x+1)t} = \frac{1}{x} Lg(x+1)
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                
+                <!-- Sous-question 3.7.2 -->
+                <task>
+                    <statement>
+                        <p>
+                            Déterminer une fonction continue <m>\varphi : [0, 1] \longrightarrow \mathbb{R}</m> telle que
+                            <me>
+                            \forall n \in \mathbb{N}^* \quad \int_0^{+\infty} G(t)e^{-nt}dt = \int_0^1 t^{n-1}\varphi(t)dt
+                            </me>
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Considérons le changement de variable <m>u = e^{-t}</m>, la fonction <m>t \mapsto e^{-t}</m> étant bien une bijection de classe <m>C^1</m> de <m>[0, +\infty[</m> sur <m>]0, 1]</m> et la fonction <m>t \mapsto G(t) e^{-nt}</m> étant intégrable sur <m>[0, +\infty[</m>
+                            <me>
+                            \int_0^{+\infty} G(t) e^{-nt} dt = \int_0^1 G(-\ln u) u^{n-1} \frac{du}{u} = \int_0^1 u^{n-1} \varphi(u) du
+                            </me>
+                            où <m>\varphi(u) = G(-\ln u)</m>.
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+                        <!-- Question 3.8 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que l’application <m>L</m> est injective.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>g \in \text{Ker } L</m>. En posant
+                        <me>
+                        G(t) = \int_0^t g(s)e^{-s}ds
+                        </me>
+                        on a selon une question précédente <m>LG(x) = \frac{1}{x}Lg(x+1)</m> pour tout <m>x \gt 0</m> donc <m>LG</m> est nulle sur <m>]0, +\infty[</m>. Étant continue sur <m>[0, +\infty[</m>, elle est donc partout nulle sur <m>]0, +\infty[</m>. En posant ensuite <m>\varphi(t) = G(-\ln t)</m>, on a selon la question précédente
+                        <me>
+                        \forall n \in \mathbb{N}^*, \int_0^{+\infty} G(t)e^{-nt}dt = \int_0^1 t^{n-1}\varphi(t)dt
+                        </me>
+                        L’intervalle <m>]0,1]</m> étant borné, on a selon la première partie de ce sujet <m>\varphi = 0</m>. Donc <m>G = 0</m> et en dérivant, <m>g = 0</m>.
+                    </p>
+                    <p>
+                        Ainsi, l’application <m>L</m> est injective.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+
+                <!-- Partie 4 : Un critère de densité lorsque I = [0, +\infty[ -->
+        <subexercises>
+            <title>Un critère de densité lorsque I = [0, +\infty[</title>
+            <introduction>
+                <p>
+                    On pose dans cette partie <m>I = [0, +\infty[</m> et on suppose qu’il existe <m>c \gt 0</m> telle que <m>\omega</m> vérifie la condition
+                    <me>
+                    \forall t \in I \quad \omega(t) \leq e^{-ct} \tag{C.S.D}
+                    </me>
+                    On considère une fonction <m>f \in \mathcal{L}^2_\omega (I)</m>.
+                </p>
+            </introduction>
+            
+            <!-- Question 3.9 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>\omega f \in E</m>, que <m>L(f\omega)</m> est de classe <m>C^\infty</m> et que pour tout <m>n \in \mathbb{N}^*</m>
+                        <me>
+                        \forall x \in [0, +\infty[ \quad L(\omega f)^{(n)}(x) = (-1)^n \int_0^{+\infty} t^n f(t)\omega(t)e^{-xt}dt
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>x \in [0, +\infty[</m>. On a <m>0 \leq \omega(t) e^{-2xt} \leq e^{-ct}</m> donc la fonction <m>t \longmapsto e^{-xt}</m> est un élément de <m>\mathcal{L}^2_\omega(I)</m>. Puisque <m>f \in \mathcal{L}^2_\omega(I)</m> alors la fonction <m>t \longmapsto \omega(t)f(t)e^{-xt}</m> est intégrable sur <m>I</m>. Ainsi
+                        <me>
+                        \text{Si } f \in \mathcal{L}^2_\omega(I) \text{ alors } \omega f \in E
+                        </me>
+                        Par ailleurs, pour tout <m>x \geq 0</m>
+                        <me>
+                        L(\omega f)(x) = \int_0^{+\infty} \omega(t)f(t)e^{-xt} dt
+                        </me>
+                        La fonction <m>g : (x,t) \longmapsto \omega(t)f(t)e^{-xt}</m> définie sur <m>D = [0, +\infty[^2</m> admet des dérivées partielles <m>\frac{\partial^n g}{\partial x^n}</m> continues sur <m>D</m> pour tout <m>n \in \mathbb{N}</m> avec
+                        <me>
+                        \frac{\partial^n g}{\partial x^n}(x,t) = (-1)^n t^n \omega(t)f(t)e^{-xt}
+                        </me>
+                        et donc
+                        <me>
+                        \forall (x,t) \in D, \left| \frac{\partial^n g}{\partial x^n}(x,t) \right| \leq t^n \omega(t)|f(t)|
+                        </me>
+                        Les fonctions <m>f</m> et <m>t \longmapsto t^n</m> sont des éléments de <m>\mathcal{L}^2_\omega(I)</m> donc les fonctions <m>\varphi_n : t \longmapsto \omega(t)t^n|f(t)|</m> sont intégrables sur <m>I</m>. D’après le théorème de dérivation d’une intégrale à paramètre, la fonction <m>L(\omega f)</m> est de classe <m>C^\infty</m> sur <m>I</m> et pour tout <m>n \in \mathbb{N}^*</m>,
+                        <me>
+                        L(\omega f)^{(n)}(x) = (-1)^n \int_0^{+\infty} t^n \omega(t)f(t)e^{-xt} dt
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 3.10 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Soit <m>x_0 \in [0, +\infty[</m>. On pose <m>f_{x_0}(t) = f(t)e^{-x_0 t}</m> pour tout <m>t \in [0, +\infty[</m>. Montrer que pour tout <m>h \in ] - c/2, c/2[</m>
+                        <me>
+                        L(\omega f)(x_0 + h) = \sum_{n=0}^{+\infty} \frac{(-1)^n}{n!} \langle t^n, f_{x_0} \rangle h^n
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>h \in ] - c/2, c/2[</m>. On a
+                        <me>
+                        L(\omega f)(x_0 + h) = \int_0^{+\infty} \omega(t)f(t)e^{-(x_0 + h)t} dt
+                        </me>
+                        En développant en série entière, on obtient
+                        <me>
+                        L(\omega f)(x_0 + h) = \int_0^{+\infty} \sum_{n=0}^{+\infty} \frac{(-1)^n}{n!} \omega(t)f(t)e^{-x_0 t} (ht)^n dt
+                        </me>
+                        Les fonctions <m>u_n : t \mapsto \frac{(-1)^n}{n!} \omega(t)f(t)e^{-x_0 t} (ht)^n</m> sont continues sur <m>I</m>, la série de fonctions <m>\sum u_n</m> converge simplement (cvs) sur <m>I</m> et sa somme est continue sur <m>I</m>. On a
+                        <me>
+                        \sum_{k=0}^n |u_k(t)| = \omega(t)|f_{x_0}(t)| \sum_{k=0}^n \frac{(ht)^n}{n!} \leq \omega(t)|f_{x_0}(t)| e^{ht} \leq \frac{\omega(t)}{2} (f_{x_0}(t)^2 + e^{2ht}) \leq \frac{1}{2} (\omega(t)f_{x_0}(t)^2 + e^{(2h - c)t})
+                        </me>
+                        <m>f_{x_0} \in \mathcal{L}^2_\omega(I)</m> et <m>2h - c \lt 0</m> donc les fonctions <m>\omega f_{x_0}^2</m> et <m>t \mapsto e^{(2h - c)t}</m> sont intégrables sur <m>I</m>. Une intégration terme à terme est donc possible par domination. Elle donne
+                        <me>
+                        L(\omega f)(x_0 + h) = \sum_{n=0}^{+\infty} \frac{(-1)^n}{n!} \langle t^n, f_{x_0} \rangle h^n
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+
+                        <!-- Question 3.11 -->
+            <exercise>
+                <title>Critère de densité</title>
+                <introduction>
+                    <p>
+                        On suppose que <m>f \in \mathcal{P}(I)^\perp</m> et on considère l’ensemble
+                        <me>
+                        Z = \{ x \in [0, +\infty[ \mid \forall n \in \mathbb{N}, L(\omega f)^{(n)}(x) = 0 \}
+                        </me>
+                    </p>
+                </introduction>
+                
+                <!-- Sous-question 3.11.1 -->
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>Z</m> est un ouvert relatif de <m>[0, +\infty[</m> et en déduire que <m>Z = [0, +\infty[</m>.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Soit <m>x_0 \in Z</m>. Alors, selon la question précédente,
+                            <me>
+                            \forall n \in \mathbb{N}, 0 = L(\omega f)^{(n)}(x_0) = \langle t^n, f_{x_0} \rangle
+                            </me>
+                            Selon la formule de Taylor, on a donc
+                            <me>
+                            \forall x \in I \cap ]x_0 - c/2, x_0 + c/2[, L(\omega f)^{(n)}(x) = 0
+                            </me>
+                            Ainsi, <m>I \cap ]x_0 - c/2, x_0 + c/2[ \subseteq Z</m>. Alors, <m>Z</m> est un ouvert relatif de <m>I</m>.
+                        </p>
+                        <p>
+                            Avec <m>x_0 = 0</m>, on a <m>[0, c/2[ \subseteq Z</m> et en particulier <m>Z</m> est non vide. Notons ensuite que <m>Z</m> est un fermé relatif de <m>[0, +\infty[</m> comme intersection de fermés relatifs de <m>I</m>.
+                        </p>
+                        <p>
+                            L’intervalle <m>I</m> est un connexe par arcs de <m>\mathbb{R}</m> et <m>Z</m> en est une partie qui est à la fois un fermé et un ouvert relatif. Comme <m>Z</m> est non vide alors nécessairement <m>Z = I</m>, et donc <m>L(\omega f) = 0</m>. Par injectivité de <m>L</m> on a donc <m>\omega f = 0</m>. Comme <m>\omega</m> est supposée partout strictement positive alors <m>f = 0</m>.
+                        </p>
+                        <p>
+                            Ainsi,
+                            <me>
+                            \mathcal{P}(I)^\perp = \{0\} \text{ est donc } \mathcal{P}(I) \text{ est dense dans } \mathcal{L}^2_\omega(I)
+                            </me>
+                        </p>
+                    </solution>
+                </task>
+                
+                <!-- Sous-question 3.11.2 -->
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que <m>f = 0</m>. Conclure.
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>
+                            Comme <m>L(\omega f) = 0</m> et que <m>L</m> est injective, on a <m>\omega f = 0</m>. Puisque <m>\omega</m> est partout strictement positive, cela implique que <m>f = 0</m>.
+                        </p>
+                        <p>
+                            Ainsi, <m>\mathcal{P}(I)^\perp = \{0\}</m>, ce qui signifie que <m>\mathcal{P}(I)</m> est dense dans <m>\mathcal{L}^2_\omega(I)</m>.
+                        </p>
+                    </solution>
+                </task>
+            </exercise>
+            </subexercises>
+            
+            <subexercises><title>Le cas où <m>I=\R</m></title>
+                <introduction>
+                    <p>
+                        On peut aussi démontrer que lorsque <m>I = \mathbb{R}</m>, un critère suffisant pour que <m>\mathcal{P}(I)</m> soit dense dans <m>\mathcal{L}^2_{\omega}(I)</m> est donné par
+                        <me>
+                        \exists c \gt 0 \quad \forall x \in \mathbb{R} \quad \omega(x) \leq e^{-c|x|}
+                        </me>
+                        On y parvient selon le même schéma que lorsque <m>I = [0, +\infty[</m> mais en faisant cette fois intervenir la transformée de Fourier d’une fonction continue intégrable <m>f : \mathbb{R} \longrightarrow \mathbb{R}</m> qui est définie par
+                        <me>
+                        \forall x \in \mathbb{R} \quad \widehat{f}(x) = \int_{-\infty}^{+\infty} f(t)e^{-ixt}dt
+                        </me>
+                        et la fameuse formule d’inversion de Fourier qui affirme que si <m>f</m> et <m>\widehat{f}</m> sont intégrables sur <m>\mathbb{R}</m> alors
+                        <me>
+                        \forall x \in \mathbb{R} \quad f(x) = \int_{-\infty}^{+\infty} \widehat{f}(t)e^{ixt}dt
+                        </me>
+                        et garantit de ce fait l’injectivité de la transformation de Fourier (Voir CNC 2003 — MATH I à ce propos).
+                    </p>
+                </introduction>
+                
+                <!-- Sous-question 3.11.1 -->
+                <exercise><title>Procédure à suivre</title>
+                <task>
+                    <statement>
+                        <p>
+                            Montrer que la transformée de Fourier <m>\widehat{f}</m> est continue sur <m>\mathbb{R}</m>.
+                        </p>
+                    </statement>
+                    <answer>
+                        <p>
+                            La fonction <m>f</m> est continue et intégrable sur <m>\mathbb{R}</m>. Pour tout <m>x \in \mathbb{R}</m>, la fonction <m>t \mapsto f(t)e^{-ixt}</m> est intégrable sur <m>\mathbb{R}</m>. Par continuité de l’intégrale à paramètre, <m>\widehat{f}</m> est continue sur <m>\mathbb{R}</m>.
+                        </p>
+                    </answer>
+                </task>
+                
+                <!-- Sous-question 3.11.2 -->
+                <task>
+                    <statement>
+                        <p>
+                            En admettant la formule d’inversion de Fourier, montrer que la transformation de Fourier est injective.
+                        </p>
+                    </statement>
+                    <answer>
+                        <p>
+                            Supposons que <m>\widehat{f} = 0</m>. Alors, selon la formule d’inversion de Fourier,
+                            <me>
+                            f(x) = \int_{-\infty}^{+\infty} \widehat{f}(t)e^{ixt}dt = 0
+                            </me>
+                            pour tout <m>x \in \mathbb{R}</m>. Ainsi, <m>f = 0</m>, ce qui montre que la transformation de Fourier est injective.
+                        </p>
+                    </answer>
+                </task>
+                
+                <!-- Sous-question 3.11.3 -->
+                <task>
+                    <statement>
+                        <p>
+                            En suivant le même schéma que pour la transformée de Laplace, montrer que si <m>\omega</m> vérifie la condition
+                            <me>
+                            \exists c \gt 0 \quad \forall x \in \mathbb{R} \quad \omega(x) \leq e^{-c|x|}
+                            </me>
+                            alors <m>\mathcal{P}(I)</m> est dense dans <m>\mathcal{L}^2_{\omega}(I)</m>.
+                        </p>
+                    </statement>
+                    <answer>
+                        <p>
+                            Supposons que <m>\omega</m> vérifie la condition donnée. Soit <m>f \in \mathcal{L}^2_\omega(I)</m> telle que <m>f \in \mathcal{P}(I)^\perp</m>. Alors, pour tout <m>n \in \mathbb{N}</m>,
+                            <me>
+                            \int_{-\infty}^{+\infty} t^n f(t) \omega(t) dt = 0
+                            </me>
+                            En utilisant la transformée de Fourier, on montre que <m>\widehat{f} = 0</m>, ce qui implique que <m>f = 0</m> par injectivité de la transformation de Fourier. Ainsi, <m>\mathcal{P}(I)^\perp = \{0\}</m>, et donc <m>\mathcal{P}(I)</m> est dense dans <m>\mathcal{L}^2_{\omega}(I)</m>.
+                        </p>
+                    </answer>
+                </task>
+            </exercise>
+        </subexercises>
+    </exercises>
+</section>

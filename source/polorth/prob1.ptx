@@ -1,0 +1,396 @@
+    <section>
+        <title>Les propriétés de base</title>
+    <exercises><title>Problème 1 : </title>
+        
+        
+        <!-- Partie 1 : Le cadre général -->
+        <subexercises>
+            <title>Le cadre général</title>
+            <introduction>
+                <p>
+                    Soit <m>I</m> un intervalle non trivial de <m>\mathbb{R}</m> et soit <m>\omega : I \longrightarrow \mathbb{R}</m> une fonction continue sur <m>I</m> telle que
+                    <me>
+                    \begin{cases} 
+                    \forall t \in I \amp \omega(t) \gt 0 \\ 
+                    \forall n \in \mathbb{N} \amp t \longmapsto \omega(t)t^n \text{ est intégrable sur } I 
+                    \end{cases} \tag{C.M}
+                    </me>
+                    On note <m>\mathcal{L}^2_\omega(I)</m> l’ensemble des fonctions <m>f</m> continues de <m>I</m> dans <m>\mathbb{R}</m> tels que <m>t \longmapsto \omega(t)f(t)^2</m> soit intégrable sur <m>I</m>. On pose pour tout couple de fonctions <m>(f, g)</m> de <m>\mathcal{L}^2_\omega(I)</m>
+                    <me>
+                    \langle f, g \rangle = \int_I \omega(t)f(t)g(t)dt
+                    </me>
+                </p>
+            </introduction>
+            
+            <!-- Question 1.1 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>\mathcal{L}^{2}_{\omega}(I)</m> est un <m>\mathbb{R}</m>-ev et que <m>\langle.,.\rangle</m> est bien défini et que c’est un produit scalaire de <m>\mathcal{L}^{2}_{\omega}(I)</m>. On notera <m>||.||_{2}</m> la norme associée à ce produit scalaire.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Constatons d’abord que pour deux fonctions réelles <m>f</m> et <m>g</m> on a <m>|fg| \leq \frac{1}{2}(f^2 + g^2)</m>. <m>\mathcal{L}^2_\omega(I)</m> contient la fonction nulle et si <m>f, g \in \mathcal{L}^2_\omega(I)</m> et <m>\lambda \in \mathbb{R}</m> alors
+                        <me>
+                        \omega(f + \lambda g)^2 \leq \omega f^2 + \lambda^2 \omega g^2 + \lambda (\omega f^2 + \omega g^2)
+                        </me>
+                        et donc <m>f + \lambda g \in \mathcal{L}^2_\omega(I)</m>. Alors <m>\mathcal{L}^2_\omega(I)</m> est un sous-espace vectoriel de <m>\mathbb{R}^I</m>. Par ailleurs, <m>\langle.,.\rangle</m> est bien défini grâce à la majoration <m>\omega |fg| \leq \frac{\omega}{2}(f^2 + g^2)</m>. Il est linéaire à droite par linéarité de l’intégrale, naturellement symétrique, positif par positivité de l’intégrale et défini positif par propriété de séparation de l’intégrale d’une fonction continue. C’est donc un produit scalaire de <m>\mathcal{L}^2_\omega(I)</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.2 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer qu’il existe une suite de polynômes <m>(P_{n})_{n}</m> telle que
+                        <me>
+                        \forall n \in \mathbb{N} \quad \deg P_{n} = n
+                        </me>
+                        <m>(P_{n})_{n}</m> est une famille orthogonale pour <m>\langle.,.\rangle</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        La condition <m>(C.M)</m> assure que <m>\mathcal{L}^2_\omega(I)</m> contient <m>\mathcal{P}(I)</m>. Il suffit ensuite d’appliquer le procédé de Gram-Schmidt à la suite <m>(e_n)_n</m> des fonctions <m>e_n: t \mapsto t^n, t \in I</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.3 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour toutes les suites de polynômes orthogonaux <m>(Q_{n})_{n}</m>, tous les polynômes <m>Q_{n}</m> sont colinéaires pour un <m>n</m> donné et en déduire qu’il existe une seule suite de polynômes orthogonaux unitaires (au sens polynomial).
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soient <m>(P_n)_n</m> et <m>(Q_n)_n</m> deux suites de polynômes orthogonaux associées au même produit scalaire <m>\langle.,.\rangle</m>. Notons pour tout <m>n \in \mathbb{N}</m>, <m>\mathcal{P}_n(I)</m> le sous-espace vectoriel de <m>\mathcal{P}(I)</m> formé des fonctions polynomiales de degré <m>\leq n</m>. <m>(P_0, P_1, \ldots, P_n)</m> est une base (échelonnée) de <m>\mathcal{P}_n(I)</m> et <m>Q_n \in \mathcal{P}_n(I)</m> donc on peut écrire
+                        <me>
+                        Q_n = \sum_{k=0}^{n-1} a_k P_k
+                        </me>
+                        Puisque <m>Q_n</m> est orthogonal à <m>Q_0, Q_1, \ldots, Q_{n-1}</m> alors il est orthogonal à <m>\mathcal{P}_{n-1}(I)</m>. Donc <m>\langle P_k, Q_n \rangle = 0</m>, et donc <m>a_k = 0</m>, pour tout <m>k \in [0; n-1]</m>. Ainsi <m>Q_n = a_n P_n</m>.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+        
+        <!-- Partie 2 : Polynômes de Legendre -->
+        <subexercises>
+            <title>Polynômes de Legendre</title>
+            <introduction>
+                <p>
+                    On pose dans cette partie <m>I = [-1, 1]</m> et <m>\omega = 1</m>. On considère la suite <m>(L_{n})_{n}</m> des polynômes de Legendre, suite définie par
+                    <me>
+                    \forall n \in \mathbb{N} \quad L_{n}(x) = \frac{1}{2^{n}n!}\frac{d^{n}}{dx^{n}} \left[ (x^{2} - 1)^{n} \right]
+                    </me>
+                </p>
+            </introduction>
+            
+            <!-- Question 1.4 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>(L_{n})_{n</m> est une suite totale de polynômes orthogonaux dans <m>\mathcal{L}^2_{I}(1)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soient <m>n, m \in \mathbb{N}</m> tels que <m>n \lt m</m>. On a
+                        <me>
+                        \langle A_n^{(n)}, A_m^{(m)} \rangle = \int_{-1}^{1} A_n^{(n)}(x)A_m^{(m)}(x)dx
+                        </me>
+                        En intégrant par parties, on montre que <m>\langle L_n, L_m \rangle = 0</m> pour <m>m \gt n</m>. De plus, la famille <m>(L_n)_n</m> est totale dans <m>\mathcal{L}^2_\omega(I)</m> grâce au théorème de Weierstrass.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.5 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer en utilisant le théorème de Rolle que pour tout <m>n \geqslant 1</m>, le polynôme <m>L_{n}</m> est scindé à racines simples.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Il suffit d’utiliser le résultat usuel suivant : si <m>P</m> est un polynôme réel de degré <m>n \gt 0</m> qui est scindé sur <m>\mathbb{R}</m> alors pour tout entier <m>k \lt n</m>, <m>P^{(k)}</m> est scindé sur <m>\mathbb{R}</m>. Ce dernier est une application du théorème de Rolle.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.6 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>n \geqslant 1</m>,
+                        <me>
+                        (n + 1)L_{n+1}(x) = (2n + 1)xL_{n}(x) - nL_{n-1}(x)
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>n \in \mathbb{N}^*</m>. <m>XL_n</m> est un élément de <m>\mathcal{P}_{n+1}(I)</m> et de ce fait il est une combinaison linéaire de <m>L_0, L_1, \ldots, L_{n+1}</m>. Par ailleurs, pour tout <m>k \lt n - 1</m> on peut écrire
+                        <me>
+                        \langle XL_n, L_k \rangle = \langle L_n, XL_k \rangle
+                        </me>
+                        et comme <m>\deg(XL_k) \lt n</m> alors <m>\langle XL_n, L_k \rangle = 0</m>. Ainsi, <m>XL_n</m> est une combinaison linéaire de <m>L_{n-1}, L_n</m> et <m>L_{n+1}</m>. En comparant les coefficients, on obtient la relation de récurrence.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+        
+        <!-- Partie 3 : Polynômes de Tchebychev -->
+        <subexercises>
+            <title>Polynômes de Tchebychev</title>
+            <introduction>
+                <p>
+                    On pose dans cette partie
+                    <me>
+                    I = ] - 1, 1[ \quad \text{et} \quad \forall t \in I \quad \omega(t) = \frac{1}{\sqrt{1 - t^{2}}}
+                    </me>
+                </p>
+            </introduction>
+            
+            <!-- Question 1.7 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>I</m> et <m>\omega</m> vérifient les conditions <m>(C.M)</m> et que
+                        <me>
+                        \forall (f, g) \in (\mathcal{L}^2_\omega(I))^{2} \quad \langle f, g \rangle = \int_{0}^{\pi} f(\cos \theta)g(\cos \theta)d\theta
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        <m>\omega</m> est bien continue strictement positive sur <m>I</m> et pour tout <m>n \in \mathbb{N}</m>,
+                        <me>
+                        x^n \omega(x) \sim \frac{1}{\sqrt{2(1-x)}} \quad x^n \omega(x) \sim \frac{1}{\sqrt{2(1+x)}}
+                        </me>
+                        Ce qui montre que toutes les fonctions <m>x \longmapsto x^n \omega(x)</m> sont intégrables sur <m>I</m>. Par ailleurs, la fonction <m>\theta \longmapsto \cos \theta</m> étant une bijection de classe <m>]0, \pi [</m> sur <m>]-1,1[</m>, le changement de variable <m>x = \cos \theta</m> donne pour tous <m>f,g \in \mathcal{L}^2_\omega(I)</m>
+                        <me>
+                        \langle f, g \rangle = \int_{-1}^1 \frac{f(x)g(x)}{\sqrt{1-x^2}} = \int_0^{\pi} f(\cos \theta) g(\cos \theta) d\theta
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.8 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Justifier l’existence d’une suite de polynômes <m>(T_{n})_{n}</m> à coefficients dans <m>\mathbb{Z}</m> telle que
+                        <me>
+                        \forall n \in \mathbb{N} \quad \forall \theta \in \mathbb{R} \quad T_{n}(\cos \theta) = \cos(n\theta)
+                        </me>
+                        Préciser le coefficient dominant du polynôme <m>T_{n}</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        <m>T_0 = 1</m> et pour <m>n \geq 1</m>, cela peut se faire par calcul direct :
+                        <me>
+                        \cos(n\theta) = \operatorname{Re} \left( (\cos \theta + i \sin \theta)^n \right)
+                        </me>
+                        En développant cette expression, on obtient un polynôme en <m>\cos \theta</m> à coefficients entiers. Le coefficient dominant de <m>T_n</m> est <m>2^{n-1}</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.9 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>(T_n)_n</m> est une suite de polynômes orthogonaux dans <m>\mathcal{L}^2_\omega(I)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soient <m>n, m \in \mathbb{N}^2</m>. On a
+                        <me>
+                        \langle T_n, T_m \rangle = \int_0^{\pi} T_n (\cos \theta) T_m (\cos m \theta) d\theta
+                        </me>
+                        En utilisant les propriétés des fonctions trigonométriques, on montre que <m>\langle T_n, T_m \rangle = 0</m> pour <m>n \neq m</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.10 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Soit <m>n \geq 1</m>. Déterminer les racines de <m>T_n</m> de la forme <m>\cos\theta</m> et en déduire que <m>T_n</m> est scindé à racines simples, ses racines étant toutes dans <m>I</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>n \in \mathbb{N}^*</m>. Cherchons les racines de <m>T_n</m> qui sont de la forme <m>\cos \theta</m> avec <m>\theta \in ]0,\pi[</m>. On a
+                        <me>
+                        T_n (\cos \theta) = 0 \Longleftrightarrow \cos n \theta = 0
+                        </me>
+                        Les racines sont donc de la forme <m>\theta = \frac{(2k+1)\pi}{2n}</m> pour <m>k \in \llbracket 0; n-1\rrbracket</m>. Comme il y en a <m>n</m> et que <m>T_n</m> est de degré <m>n</m>, alors ce sont les seules racines.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+        
+        <!-- Partie 4 : Polynôme de Laguerre -->
+        <subexercises>
+            <title>Polynôme de Laguerre</title>
+            <introduction>
+                <p>
+                    Dans cette partie on pose
+                    <me>
+                    I = [0, +\infty[ \quad \omega(x) = e^{-x} \quad \text{et} \quad P_n(x) = \frac{e^x}{n!} \frac{d^n}{dx^n}(x^n e^{-x})
+                    </me>
+                </p>
+            </introduction>
+            
+            <!-- Question 1.12 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>I</m> et <m>\omega</m> vérifient les conditions <m>(C.N)</m> et que les fonctions <m>P_n</m> sont bien polynomiales.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        La fonction <m>\omega : x \mapsto e^{-x}</m> est bien continue partout strictement positive sur <m>I = [0, +\infty[</m> et pour tout <m>n \in \mathbb{N}</m>,
+                        <me>
+                        x^n \omega(x) = o_{+\infty} \left( \frac{1}{x^2} \right)
+                        </me>
+                        Donc <m>x \mapsto x^n \omega(x)</m> qui est continue sur <m>I</m> est intégrable sur <m>[1, +\infty[</m> et donc sur <m>I</m>. Par ailleurs, grâce à la formule de Leibniz,
+                        <me>
+                        P_n(x) = \frac{e^x}{n!} \sum_{k=0}^{n} (-1)^k \binom{n}{k} \frac{n!}{k!} x^k e^{-x} = \sum_{k=0}^{n} \frac{(-1)^k}{k!} \binom{n}{k} x^k
+                        </me>
+                        <m>P_n</m> est bien polynomiale et elle est de degré <m>n</m> et de coefficient dominant <m>\frac{(-1)^n}{n!}</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.13 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que
+                        <me>
+                        \forall Q \in \mathcal{P}(I) \quad \forall n \in \mathbb{N} \quad \langle P_n, Q \rangle = \frac{(-1)^n}{n!} \int_0^{+\infty} x^n Q^{(n)}(x)e^{-x} dt
+                        </me>
+                        En déduire que la suite <m>(P_n)_n</m> est orthonormale dans <m>\mathcal{L}^2_\omega(I)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        On pose <m>f_n(x) = x^n e^{-x}</m> de telle sorte que
+                        <me>
+                        P_n(x) = \frac{e^x}{n!} f_n^{(n)}(x)
+                        </me>
+                        Les intégrales <m>\int_0^{+\infty} Q(x) e^{-x}</m> étant convergentes pour toute <m>Q \in \mathcal{P}(I)</m>, une intégration par parties donne
+                        <me>
+                        \langle P_n, Q \rangle = \frac{1}{n!} \int_0^{+\infty} f_n^{(n)}(x) Q(x) dx
+                        </me>
+                        En répétant ces intégrations par parties, on obtient
+                        <me>
+                        \langle P_n, Q \rangle = \frac{(-1)^n}{n!} \int_0^{+\infty} x^n Q^{(n)}(x) e^{-x} dx
+                        </me>
+                        Ce qui montre que <m>(P_n)_n</m> est orthogonale.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.14 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>n \geq 1</m>, <m>P_n</m> est scindé à racines simples, racines qui sont toutes dans <m>I</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        On a <m>f_n'(x) = (nx^{n-1} - x^n)e^{-x} = x^{n-1}R_1(x)e^{-x}</m> où le polynôme <m>R_1(x)</m> est de degré 1 et sa racine est dans <m>I</m>. Supposons par récurrence qu’à un ordre <m>k \lt n</m> on ait
+                        <me>
+                        f_n^{(k)}(x) = x^{n-k}R_k(x)e^{-x}
+                        </me>
+                        où <m>R_k</m> est un polynôme de degré <m>k</m> scindé à racines simples dans <m>]0, +\infty[</m>. En dérivant, on montre que <m>R_{k+1}</m> est aussi scindé à racines simples dans <m>]0, +\infty[</m>. À l’ordre <m>k = n</m>, on a <m>f_n^{(n)}(x) = R_n(x) e^{-x}</m> et donc <m>P_n = \frac{1}{n!} R_n</m>. Ainsi, <m>P_n</m> est scindé à racines simples dans <m>]0, +\infty[</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.15 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>n \in \mathbb{N}</m>,
+                        <me>
+                        (n + 1)P_{n+1} = (2n + 1 - X)P_n - n^2P_{n-1}
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Comme pour les polynômes de Legendre, on peut justifier qu’il existe <m>a_n, b_n, c_n \in \mathbb{R}</m> tels que
+                        <me>
+                        X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1}
+                        </me>
+                        En comparant les coefficients, on obtient la relation de récurrence.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+        
+        <!-- Partie 5 : Le cas général -->
+        <subexercises>
+            <title>Le cas général</title>
+            <introduction>
+                <p>
+                    On retourne au cas général et on considère une suite <m>(P_n)_n</m> de polynômes orthogonaux dans <m>\mathcal{L}^2_\omega(I)</m>.
+                </p>
+            </introduction>
+            
+            <!-- Question 1.16 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Soit <m>n \geq 1</m>. Montrer que <m>P_n</m> admet au moins une racine de multiplicité impaire dans <m>I</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Grâce à l’orthogonalité de la suite <m>(P_n)_n</m>, on a
+                        <me>
+                        \forall Q \in \mathbb{R}_{n-1}[X], \langle P_n, Q \rangle = 0
+                        </me>
+                        Pour <m>Q = 1</m>, on voit que <m>\int_I \omega(x) P_n(x) dx = 0</m>. Par propriété de séparation de l’intégrale d’une fonction continue, <m>P_n</m> ne peut garder un signe constant sur <m>[0, +\infty]</m>. Il admet donc au moins une racine de multiplicité impaire dans <m>I</m>.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 1.17 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que pour tout <m>n \in \mathbb{N}</m>, <m>(P_0, P_1, \ldots, P_n)</m> est une base de <m>\mathbb{R}_n[X]</m> et en déduire que pour tout <m>n \geq 1</m> il existe des réels <m>a_n, b_n</m> et <m>c_n</m> tels que
+                        <me>
+                        X P_n = a_n P_{n+1} + b_n P_n + c_n P_{n-1} \tag{E.R}
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        L’existence de <m>a_n, b_n</m> et <m>c_n</m> se justifie exactement comme pour les polynômes de Legendre. Ensuite, <m>a_n</m> est non nul pour une histoire de degré et pour <m>c_n</m> on a
+                        <me>
+                        |c_n||P_{n-1}|^2 = \langle X P_n, P_{n-1} \rangle = \langle P_n, X P_{n-1} \rangle
+                        </me>
+                        Mais puisque <m>X P_{n-1}</m> est de degré <m>n</m>, il peut être écrit par division euclidienne sous la forme <m>\alpha P_n + R</m> avec <m>\alpha \in \mathbb{R}^*</m> et <m>\deg R \lt n</m> et donc <m>\langle P_n, X P_n \rangle = |\alpha||P_n|^2 \neq 0</m>. Par suite, <m>c_n \neq 0</m>.
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+    </exercises>
+
+
+</section>

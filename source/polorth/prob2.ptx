@@ -1,0 +1,315 @@
+    <section> 
+        <title>Opérateurs différentiels relatifs aux polynômes orthogonaux usuels</title>
+    <exercises><title>Problème 2 : </title>
+        <introduction>
+            <p>
+                On conserve les notations du problème précédent.
+            </p>
+        </introduction>
+        
+        <!-- Partie 1 : Construction commune -->
+        <subexercises>
+            <title>Construction commune</title>
+            <introduction>
+                <p>
+                    On suppose que <m>\omega</m> est de classe <m>C^1</m> et qu’il existe des polynômes réels <m>A</m> et <m>B</m> sans racines dans <m>I</m> tels que
+                    <me>
+                    \begin{cases} 
+                    (A\omega)' = B\omega \\ 
+                    \forall n \in \mathbb{N} \amp t \mapsto t^n A(t)\omega(t) \text{ est de limites nulles aux bornes de } I 
+                    \end{cases}
+                    </me>
+                    et on pose pour tout <m>P \in \mathcal{P}(I)</m>
+                    <me>
+                    U(P) = AP'' + BP'
+                    </me>
+                </p>
+            </introduction>
+            
+            <!-- Question 2.1 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que
+                        <me>
+                        U(P) = \frac{1}{\omega} (A\omega P')'
+                        </me>
+                        En déduire que
+                        <me>
+                        \forall (P, Q) \in \mathcal{P}(I)^2 \quad \langle U(P), Q \rangle = - \int_I A\omega P'Q'
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        On calcule
+                        <me>
+                        (A\omega P')' = (A\omega)'P' + A\omega P'' = B\omega P' + A\omega P''
+                        </me>
+                        donc
+                        <me>
+                        U(P) = \frac{1}{\omega} (A\omega P')'
+                        </me>
+                        Soient maintenant <m>P, Q \in \mathcal{L}^2_\omega(I)</m>. Selon l'expression précédente,
+                        <me>
+                        \langle U(P), Q \rangle = \int_I (A\omega P')'Q
+                        </me>
+                        L’intégrale <m>\int_I \omega AP'Q'</m> est convergente et les limites de la fonction <m>\omega AP'</m> existent et sont nulles aux extrémités de l’intervalle <m>I</m> par hypothèses. Il est donc possible de procéder à une intégration par parties. Elle donne
+                        <me>
+                        \langle U(P), Q \rangle = -\int_I \omega AP'Q'
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 2.2 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer que <m>U</m> est un endomorphisme symétrique de <m>\mathcal{P}(I)</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Cette dernière expression est symétrique par rapport à <m>P</m> et à <m>Q</m>. Ce qui signifie que <m>U</m> est un endomorphisme symétrique de <m>\mathcal{L}^2_\omega(I)</m>.
+                    </p>
+                    <p>
+                        <em>N.B.</em> Bien que le programme se limite aux espaces euclidiens en ce qui concerne la notion d’endomorphisme symétrique, celle-ci ne perd rien de son intérêt en cas de dimension infinie.
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 2.3 -->
+            <exercise>
+                <statement>
+                    <p>
+                        Montrer qu’il existe une suite <m>(P_n)_n</m> de polynômes orthogonaux de <m>\mathcal{L}^2_{\omega}(I)</m> et une suite réelle <m>(\lambda_n)_n</m> telle que
+                        <me>
+                        \forall n \in \mathbb{N} \quad AP''_n + BP'_n = \lambda_n P_n \tag{EDL}
+                        </me>
+                        en précisant ce que représentent les scalaires <m>\lambda_n</m> pour l’endomorphisme <m>U</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Notons <m>\mathcal{P}_n(I)</m> le sous-espace vectoriel de <m>\mathcal{P}(I)</m> formé des éléments de degré <m>\leq n</m>. Les hypothèses <m>\deg A \leq 2</m> et <m>\deg B \leq 1</m> impliquent que <m>\mathcal{P}_n(I)</m> est stable par <m>U</m>. On notera <m>U_n</m> l’endomorphisme de <m>\mathcal{P}_n</m> induit par <m>U</m>. <m>U_n</m> est ainsi un endomorphisme symétrique de l’espace euclidien <m>\mathcal{P}_{n+1}(I)</m>.
+                    </p>
+                    <p>
+                        Construisons les termes de la suite <m>(P_n)_n</m> par récurrence sur <m>n</m>.
+                    </p>
+                    <p>
+                        <m>U(1) = 0</m> donc il suffit de prendre <m>P_0 = 1</m> à l’ordre 0.
+                    </p>
+                    <p>
+                        Supposons qu’à l’ordre <m>n</m> on ait construit une famille échelonnée orthogonale formée de vecteurs propres de <m>U</m>. Cette famille est alors une base orthogonale de <m>\mathcal{P}_n(I)</m> formée de vecteurs propres de <m>U_n</m>. L’espace <m>\mathcal{P}_n(I)</m> est stable par <m>U_{n+1}</m> donc son orthogonal dans <m>\mathcal{P}_{n+1}(I)</m> est stable par <m>U_{n+1}</m>. Cet orthogonal est une droite vectorielle, il existe donc un vecteur propre <m>P_{n+1}</m> de <m>U</m> dans <m>\mathcal{P}_{n+1}(I)</m> et qui est orthogonal à <m>\mathcal{P}_n(I)</m>. Puisque <m>P_{n+1} \in \mathcal{P}_{n+1}(I) \setminus \mathcal{P}_n(I)</m> alors <m>\deg P_{n+1} = n+1</m>. Ce qui achève la construction des vecteurs <m>P_n</m>. Ce sont des vecteurs propres de <m>U</m> donc pour tout <m>n \in \mathbb{N}</m> il existe <m>\lambda_n \in \mathbb{R}</m> tel que
+                        <me>
+                        AP''_n + BP'_n = \lambda_n P_n
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 2.4 -->
+            <exercise>
+                <statement>
+                    <p>
+                        On note <m>a</m> et <m>b</m> les coefficients dominants respectifs de <m>A</m> et <m>B</m>. Montrer que si <m>-b/a</m> n’est pas un entier naturel alors les réels <m>\lambda_n</m> sont deux à deux distincts.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Pour <m>n = 0</m>, <m>P_0</m> est constant donc dans tous les cas <m>\lambda_0 = 0</m>.
+                    </p>
+                    <p>
+                        Soit maintenant <m>n \in \mathbb{N}^*</m>. En comparant les termes de plus haut degré dans l’égalité <m>AP''_n + BP'_n = \lambda_n P_n</m> on obtient
+                        <me>
+                        \lambda_n = n(n-1)a + nb
+                        </me>
+                        si <m>\deg A = 2</m> et <m>\deg B = 1</m>. Dans ce cas, pour des entiers <m>n</m> et <m>m</m> distincts on a
+                        <me>
+                        \lambda_m = \lambda_n \iff (m(m-1) - n(n-1))a + (m-n)b = 0
+                        </me>
+                        <me>
+                        \iff (m-n)(m+n-1)a + (m-n)b = 0
+                        </me>
+                        <me>
+                        \iff (m+n-1)a + b = 0
+                        </me>
+                        Si <m>-b/a \notin \mathbb{N}</m> alors les valeurs propres <m>\lambda_n</m> de <m>U</m> sont deux à deux distinctes.
+                    </p>
+                </solution>
+            </exercise>
+                    <!-- Question 2.5 : Construction alternative d'une spo -->
+        <exercise>
+            <title>Construction alternative d'une spo</title>
+            <introduction>
+                <p>
+                    Cette question propose une construction alternative d'une suite de polynômes orthogonaux (spo).
+                </p>
+            </introduction>
+            
+            <!-- Sous-question 2.5.1 -->
+            <task>
+                <statement>
+                    <p>
+                        Sachant que <m>\omega</m> est seulement de classe <m>C^1</m>, montrer que pour tout <m>n \in \mathbb{N}^*</m>, la fonction <m>t \mapsto \omega(t)A(t)^n</m> est de classe <m>C^n</m> et que pour tout <m>k \in [0; n]</m> il existe un polynôme <m>Q_{n,k}</m> tel que
+                        <me>
+                        \frac{d^k}{dt^k} (\omega(t)A(t)^n) = \omega(t)A(t)^{n-k} Q_{n,k}(t)
+                        </me>
+                        Noter qu’en particulier
+                        <me>
+                        Q_{n,n}(t) = \frac{1}{\omega(t)} \frac{d^n}{dt^n} (\omega(t)A(t)^n) \quad (\text{Formule de RODRIGUEZ})
+                        </me>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        La condition liant <m>A</m> et <m>B</m> s’écrit
+                        <me>
+                        A\omega' = (B - A') \omega
+                        </me>
+                        Montrons par récurrence sur <m>n \in \mathbb{N}^*</m> que la fonction <m>\omega A^n</m> est de classe <m>C^n</m>.
+                    </p>
+                    <p>
+                        Pour <m>n = 1</m>, <m>\omega A</m> est bien de classe <m>C^1</m> puisque <m>\omega</m> l’est.
+                    </p>
+                    <p>
+                        Soit <m>n \in \mathbb{N}^*</m> et supposons que <m>\omega A^n</m> est de classe <m>C^n</m>. <m>\omega A^{n+1}</m> est alors au moins de classe <m>C^n</m> et on peut écrire
+                        <me>
+                        (A^{n+1}\omega)' = nA'A^n\omega + A^{n+1}\omega' = (nA' + B - A')A^n\omega
+                        </me>
+                        Par hypothèse de récurrence, <m>\omega A^n</m> est de classe <m>C^n</m> donc l’expression précédente montre que c’est le cas de <m>(A^{n+1}\omega)'</m>. Alors <m>A^{n+1} \omega</m> est de classe <m>C^{n+1}</m>.
+                    </p>
+                    <p>
+                        Si maintenant on suppose qu’à l’ordre <m>n</m>, il existe pour tout <m>k \in [1; n]</m> un polynôme <m>Q_{n,k}</m> de degré <m>\leq k</m> tel que <m>(\omega A^n)^{(k)} = \omega A^{n-k}Q_{n,k}</m>, alors la relation précédente donne pour <m>2 \leq k \leq n+1</m>
+                        <me>
+                        (\omega A^{n+1})^{(k)} = ((n-1)A' + B)A^n\omega)^{(k-1)}
+                        </me>
+                        Le polynôme <m>C_n = (n-1)A' + B</m> est de degré <m>\leq 1</m>, la formule de Leibniz donne donc
+                        <me>
+                        (\omega A^{n+1})^{(k)} = C_n \cdot (\omega A^n)^{(k-1)} + (k-1)C_n' \cdot (\omega A^n)^{(k-2)} \\
+                        = \omega C_n A^{n+1-k}Q_{n,k-1} + (k-1)\omega C_n'A^{n+2-k}Q_{n,k-2} \\
+                        = \omega A^{n+1-k}Q_{n+1,k}
+                        </me>
+                        avec <m>Q_{n+1,k} = C_nQ_{n,k-1} + (k-1)C_n'AQ_{n,k-2}</m>.
+                    </p>
+                    <p>
+                        En outre, on a bien <m>\deg Q_{n+1,k} \leq k</m>.
+                    </p>
+                    <p>
+                        Pour <m>k = 1</m>, il suffit de remarquer que <m>(\omega A^{n+1})' = \omega A^n C_n</m> et il suffit donc de prendre <m>Q_{n+1,1} = C_n = (n-1)A' + B</m>. En conclusion, pour tout <m>n \in \mathbb{N}^*</m>, <m>\omega A^n</m> est de classe <m>C^n</m> sur <m>I</m> et on a
+                        <me>
+                        \forall k \in [0; n], \quad (\omega A^n)^{(k)} = \omega A^{n-k}Q_{n,k}
+                        </me>
+                        où <m>Q_{n,k}</m> est un polynôme de degré <m>\leq k</m>.
+                    </p>
+                </solution>
+            </task>
+            
+            <!-- Sous-question 2.5.2 -->
+            <task>
+                <statement>
+                    <p>
+                        Montrer que <m>(Q_{n,n})_n</m> est une spo.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Soit <m>n \in \mathbb{N}^*</m>. On a <m>\omega Q_{n,n} = (\omega A^n)^{(n)}</m> donc pour tout polynôme <m>P</m>
+                        <me>
+                        \langle Q_{n,n}, P \rangle = \int_I (\omega A^n)^{(n)} P
+                        </me>
+                        Sachant que <m>(\omega A^n)^{(n-1)} = \omega A Q_{n,n-1}</m> et que <m>A Q_{n,n-1}</m> est une fonction polynomiale, alors <m>(\omega A^n)^{(n-1)}</m> admet des limites nulles aux extrémités de <m>I</m>. Une intégration par parties donne alors
+                        <me>
+                        \langle Q_{n,n}, P \rangle = - \int_I (\omega A^n)^{(n-1)} P'
+                        </me>
+                        Plusieurs intégrations par parties nous mènent pour les mêmes raisons vers
+                        <me>
+                        \langle Q_{n,n}, P \rangle = (-1)^n \int_I \omega A^n P^{(n)}
+                        </me>
+                        Ce qui implique en particulier que si <m>\deg P \lt n</m> alors <m>\langle Q_{n,n}, P \rangle = 0</m>. Le polynôme <m>Q_{n,n}</m> de <m>\mathcal{P}_n(I)</m> est ainsi orthogonal à <m>\mathcal{P}_{n-1}(I)</m>. Il est donc soit nul soit de degré <m>n</m>.
+                    </p>
+                </solution>
+            </task>
+        </exercise>
+        </subexercises>
+
+                <!-- Partie 2 : Construction au cas par cas -->
+        <subexercises>
+            <title>Construction au cas par cas</title>
+            <introduction>
+                <p>
+                    Construire des polynômes <m>A</m> et <m>B</m> et écrire les équations (EDL) qui correspondent aux polynômes de :
+                </p>
+            </introduction>
+            
+            <!-- Question 2.6 : Polynômes de Legendre -->
+            <exercise>
+                <statement>
+                    <p>
+                        <alert> LEGENDRE</alert>  : <m>I = [-1, 1]</m> et <m>\omega = 1</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Pour les polynômes de Legendre, on prend <m>A = X^2 - 1</m> et <m>B = 2X</m>. Selon l'équation différentielle (EDL), on a :
+                        <me>
+                        (x^2 - 1)P''_n(x) + 2xP'_n(x) = n(n+1)P_n(x)
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 2.7 : Polynômes de Tchebychev -->
+            <exercise>
+                <statement>
+                    <p>
+                        <alert> TCHEBYCHEV</alert>  : <m>I = ] - 1, 1[</m> et <m>\omega(t) = \frac{1}{\sqrt{1-t^2}}</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Pour les polynômes de Tchebychev, on prend <m>A = X^2 - 1</m> et <m>B = X</m>. L'équation différentielle (EDL) devient :
+                        <me>
+                        (x^2 - 1)P''_n(x) + xP'_n(x) = n^2P_n(x)
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 2.8 : Polynômes de Laguerre -->
+            <exercise>
+                <statement>
+                    <p>
+                        <alert> LAGUERRE</alert>  : <m>I = [0, +\infty[</m> et <m>\omega(t) = e^{-t}</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Pour les polynômes de Laguerre, on prend <m>A = X</m> et <m>B = 1 - X</m>. L'équation différentielle (EDL) est :
+                        <me>
+                        xP''_n(x) + (1 - x)P'_n(x) = -nP_n(x)
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+            
+            <!-- Question 2.9 : Polynômes de Hermite -->
+            <exercise>
+                <statement>
+                    <p>
+                        <alert> HERMITE</alert>  : <m>I = \mathbb{R}</m> et <m>\omega(t) = e^{-t^2}</m>.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Pour les polynômes de Hermite, on prend <m>A = 1</m> et <m>B = -X</m>. L'équation différentielle (EDL) devient :
+                        <me>
+                        P''_n(x) - xP'_n(x) = -nP_n(x)
+                        </me>
+                    </p>
+                </solution>
+            </exercise>
+        </subexercises>
+    </exercises>
+</section>
