@@ -123,7 +123,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="concentration2025-3-5.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Précédent</span></a><a class="up-button button" href="concentration2025-3.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><span class="next-button button disabled"><span class="name">Suivant</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="concentration2025-3-5.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Précédent</span></a><a class="up-button button" href="concentration2025-3.html" title="Haut"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Haut</span></a><a class="next-button button" href="concentration2025-3-7.html" title="Suivant"><span class="name">Suivant</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathtools}\require{empheq}\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -176,6 +176,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="concentration2025-3-6.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Approximation ponctuelle par des polynômes orthogonaux</span></a></div>
 <ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="concentration2025-3-6.html#concentration2025-3-6-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Problème 4</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="concentration2025-3-7.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Polynômes orthogonaux relatifs à une forme linéaire</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="concentration2025-3-7.html#concentration2025-3-7-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Problème 5</span></a></div></li></ul>
 </li>
 </ul>
 </li></ul></nav></div>
@@ -328,9 +332,181 @@ F_n^{\prime}(x) = -\frac{a_n K_n(x, x)}{||P_n||^2 P_{n+1}(x)^2}
 </div>
 <div class="para">Puisque <span class="process-math">\(K_n(x, x) \gt 0\)</span> alors <span class="process-math">\(F_n\)</span> est strictement monotone sur <span class="process-math">\([x_k, x_{k+1}]\)</span> et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre <span class="process-math">\(x_k\)</span> et <span class="process-math">\(x_{k+1}\text{.}\)</span> Alors <span class="process-math">\(P_n\)</span> admet une racine unique entre <span class="process-math">\(x_k\)</span> et <span class="process-math">\(x_{k+1}\text{.}\)</span>
 </div>
-</div></div></details></div></article></article></article></section></section></div>
+</div></div></details></div></article></article></article><article class="subexercises" id="concentration2025-3-6-2-4"><h4 class="heading"><span class="title">Le problème de l’approximation ponctuelle</span></h4>
+<div class="introduction" id="concentration2025-3-6-2-4-2"><div class="para" id="concentration2025-3-6-2-4-2-1">On suppose que la suite <span class="process-math">\((P_n)_n\)</span> est totale et on note <span class="process-math">\(S_n\)</span> la projection orthogonale de <span class="process-math">\(\mathcal{L}^2_{\omega}(I)\)</span> sur le sous-espace vectoriel <span class="process-math">\(\mathcal{P}(I)_n\)</span> formé des fonctions polynomiales de degré inférieur ou égal à <span class="process-math">\(n\text{.}\)</span>
+</div></div>
+<article class="exercise exercise-like" id="concentration2025-3-6-2-4-3"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para logical" id="concentration2025-3-6-2-4-3-1-1">
+<div class="para">Montrer que pour tout <span class="process-math">\(f \in \mathcal{L}^2_{\omega}(I)\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall x \in I \quad S_n(f)(x) = \int_I K_n(x, t) f(t) \omega(t) dt
+\end{equation*}
+</div>
+<div class="para">Que donne ce résultat si on prend <span class="process-math">\(f = 1\)</span> ?</div>
+</div>
+<div class="solutions"><details id="concentration2025-3-6-2-4-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="concentration2025-3-6-2-4-3-2-1">
+<div class="para">Soit <span class="process-math">\(n \in \mathbb{N}\text{.}\)</span> On a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n(f) = \sum_{k=0}^n \frac{\langle P_k, f \rangle}{||P_k||^2} P_k
+\end{equation*}
+</div>
+<div class="para">Donc pour tout <span class="process-math">\(x \in I\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n(f)(x) = \sum_{k=0}^n \frac{P_k(x)}{||P_k||^2} \int_I \omega(t) P_k(t) f(t) dt
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \int_I \left( \sum_{k=0}^n \frac{P_k(x) P_k(t)}{||P_k||^2} \right) \omega(t) f(t) dt
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n(f)(x) = \int_I \omega(t) f(t) K_n(x,t) dt
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="concentration2025-3-6-2-4-3-2-2">
+<div class="para">Ensuite, si <span class="process-math">\(f = 1\)</span> alors <span class="process-math">\(f \in \mathcal{P}_n(I)\)</span> et donc <span class="process-math">\(S_n(f) = f\)</span> pour tout <span class="process-math">\(n \geq 1\text{.}\)</span> Ce qui signifie que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n \geq 1, \quad \forall x \in I, \quad \int_I \omega(t) K_n(x,t) dt = 1
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><article class="exercise exercise-like" id="concentration2025-3-6-2-4-4"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para logical" id="concentration2025-3-6-2-4-4-1-1">
+<div class="para">On suppose désormais que <span class="process-math">\(f\)</span> est un élément de classe <span class="process-math">\(C^1\)</span> de <span class="process-math">\(\mathcal{L}^2_{\omega}(I)\text{.}\)</span> On fixe <span class="process-math">\(x\)</span> dans <span class="process-math">\(I\)</span> et on définit la fonction <span class="process-math">\(g_x\)</span> sur <span class="process-math">\(I\)</span> par</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_x(t) = 
+\begin{cases} 
+\frac{f(t)-f(x)}{t-x} \amp \text{si } t \neq x \\
+f'(x) \amp \text{si } t = x 
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Montrer que <span class="process-math">\(g_x\)</span> est un élément de <span class="process-math">\(\mathcal{L}^2_{\omega}(I)\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="concentration2025-3-6-2-4-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="concentration2025-3-6-2-4-4-2-1">
+<div class="para">
+<span class="process-math">\(f\)</span> est de classe <span class="process-math">\(C^1\)</span> sur <span class="process-math">\(I\)</span> donc <span class="process-math">\(g_x\)</span> est continue sur <span class="process-math">\(I\text{.}\)</span> Sa continuité en <span class="process-math">\(x\)</span> implique l’existence d’un réel <span class="process-math">\(\delta \gt 0\)</span> tel que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall t \in I \cap [x - \delta, x + \delta[, |g_x(t)| \leq |f'(x)| + 1]
+\end{equation*}
+</div>
+<div class="para">On pose <span class="process-math">\(J = I \cap [x - \delta, x + \delta[\text{.}\)</span> On peut ensuite écrire</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall t \in I \setminus J, |g_x(t)| \leq \frac{1}{\delta} |f(t) - f(x)| \leq \frac{1}{\delta} |f(t)| + \frac{1}{\delta} |f(x)|
+\end{equation*}
+</div>
+<div class="para">Si on pose maintenant <span class="process-math">\(M = 1 + |f'(x)| + \frac{1}{\delta} |f(x)|\text{,}\)</span> alors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall t \in I, |g_x(t)| \leq M + \frac{1}{\delta} |f(t)|
+\end{equation*}
+</div>
+<div class="para">La fonction <span class="process-math">\(t \mapsto M + \frac{1}{\delta} |f(t)|\)</span> est un élément de <span class="process-math">\(\mathcal{L}^2_\omega(I)\)</span> donc <span class="process-math">\(g_x \in \mathcal{L}^2_\omega(I)\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="concentration2025-3-6-2-4-5"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para logical" id="concentration2025-3-6-2-4-5-1-1">
+<div class="para">Montrer que pour tout <span class="process-math">\(x \in I\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n(f)(x) - f(x) = \frac{a_n}{||P_n||^2} (P_n(x)\langle P_{n+1}, g_x \rangle - P_{n+1}(x)\langle P_n, g_x \rangle)
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="concentration2025-3-6-2-4-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="concentration2025-3-6-2-4-5-2-1">
+<div class="para">Selon la question précédente et la définition de <span class="process-math">\(K_n(x, t)\text{,}\)</span> on a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n(f)(x) - f(x) = \int_I \omega(t) K_n(x, t) (f(t) - f(x)) dt
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \frac{a_n}{||P_n||^2} \int_I \omega(t) \left( P_{n+1}(t) P_n(x) - P_{n+1}(x) P_n(t) \right) g_x(t) dt
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_n(f)(x) - f(x) = a_n \frac{P_n(x) \langle P_{n+1}, g_x \rangle - P_{n+1}(x) \langle P_n, g_x \rangle}{||P_n||^2}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="exercise exercise-like" id="concentration2025-3-6-2-4-6"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para logical" id="concentration2025-3-6-2-4-6-1-1">
+<div class="para">Justifier que la suite <span class="process-math">\((\langle P_n, g_x \rangle)_n\)</span> converge vers 0 et en déduire que si la suite de terme</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\delta_n = \frac{\lambda_n! ||P_{n+1}||}{\lambda_{n+1}! ||P_n||} \left( \frac{||P_n(x)||}{||P_n||} + \frac{||P_{n+1}(x)||}{||P_{n+1}||} \right)
+\end{equation*}
+</div>
+<div class="para">est bornée alors <span class="process-math">\((S_n(f)(x))_n\)</span> converge vers <span class="process-math">\(f(x)\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="concentration2025-3-6-2-4-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="concentration2025-3-6-2-4-6-2-1">
+<div class="para">La famille <span class="process-math">\((P_n)_n\)</span> étant orthogonale et la fonction <span class="process-math">\(g_x\)</span> un élément de <span class="process-math">\(\mathcal{L}^2_\omega(I)\text{,}\)</span> on a selon l’inégalité de Bessel</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n \in \mathbb{N}^*, \sum_{k=0}^n \frac{\langle P_k, g_x \rangle^2}{||P_k||^2} \leq ||g_x||^2
+\end{equation*}
+</div>
+<div class="para">La série de termes réels positifs <span class="process-math">\(\sum \frac{\langle P_n, g_x \rangle^2}{||P_n||^2}\)</span> est donc convergente. Par condition nécessaire de convergence d’une série, on a donc</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\langle P_n, g_x \rangle^2}{||P_n||^2} \rightarrow 0
+\end{equation*}
+</div>
+<div class="para">Soit <span class="process-math">\(\varepsilon \gt 0\)</span> et soit alors <span class="process-math">\(N \in \mathbb{N}\)</span> tel que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n \geq N, |\langle P_n, g_x \rangle| \leq \varepsilon ||P_n||
+\end{equation*}
+</div>
+<div class="para">On a alors selon la question précédente pour tout <span class="process-math">\(n \geq N\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|S_n(f)(x) - f(x)| \leq \varepsilon \frac{|a_n|}{||P_n||^2} \left( |P_n(x)| ||P_{n+1}|| + |P_{n+1}(x)| ||P_n|| \right)
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\leq \varepsilon \frac{|a_n|}{\lambda_{n+1}} \frac{||P_{n+1}||}{||P_n||} \left( \frac{|P_n(x)|}{||P_n||} + \frac{|P_{n+1}(x)|}{||P_{n+1}||} \right)
+\end{equation*}
+</div>
+<div class="para">Si on pose plutôt</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\delta_n(x) = \frac{|a_n|}{\lambda_{n+1}} \frac{||P_{n+1}||}{||P_n||} \left( \frac{|P_n(x)|}{||P_n||} + \frac{|P_{n+1}(x)|}{||P_{n+1}||} \right)
+\end{equation*}
+</div>
+<div class="para">alors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\forall n \geq N, |S_n(f)(x) - f(x)| \leq \varepsilon \delta_n(x)
+\end{equation*}
+</div>
+<div class="para">et ainsi</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text{Si } f \text{ est de classe } C^1 \text{ sur } I, \text{ alors la suite } \left( S_n(f)(x) \right)_n \text{ converge vers } x \text{ en tout } x \in I \text{ pour lequel la suite } \left( \delta_n(x) \right)_n \text{ est bornée.}
+\end{equation*}
+</div>
+</div></div></details></div></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="concentration2025-3-5.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Précédent</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Suivant</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="concentration2025-3-5.html" title="Précédent"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Précédent</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="concentration2025-3-7.html" title="Suivant"><span class="name">Suivant</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

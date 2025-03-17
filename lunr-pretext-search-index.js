@@ -367,7 +367,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.4",
   "title": "Approximation ponctuelle par des polynômes orthogonaux",
-  "body": " Approximation ponctuelle par des polynômes orthogonaux  Problème 4   Dans ce problème, on étudie la possibilité d’effectuer une approximation ponctuelle (au sens de la convergence simple) d’un élément de par des fonctions polynomiales s’exprimant à l’aide de polynômes orthogonaux. Soit une suite de polynômes orthogonaux de . On conserve sous sa forme l’équation de récurrence (E.R) On note en plus le coefficient dominant de et on pose .     Noyaux relatifs à une suite de polynômes orthogonaux   On pose pour tout tel que   est appelée noyau d’ordre de la suite .     Montrer que est une fonction polynomiale en et .   Si on fixe , la fonction est polynomiale et s’annule pour . Elle est donc divisible par . Ainsi, est une expression polynomiale en .     Montrer que si est un polynôme de degré et de coefficient dominant alors et en déduire que    Soit un polynôme de degré et de coefficient dominant . Le polynôme est de degré donc . Ce qui donne : En utilisant cette relation, on peut montrer que      Montrer que pour tout  et en déduire que    On a Comme , alors Par ailleurs, et en posant , on a  On en déduit par télescopage que     Une application  Cette question explore une application du noyau .   Montrer que pour tout .   On a    Montrer que    Si , on peut écrire En faisant tendre vers , on obtient    En déduire que si alors entre deux racines de il y a exactement une racine de .   Soit . Notons les racines (simples) de et considérons la fonction rationnelle . est de classe sur chaque intervalle et Puisque alors est strictement monotone sur et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre et . Alors admet une racine unique entre et .     "
+  "body": " Approximation ponctuelle par des polynômes orthogonaux  Problème 4   Dans ce problème, on étudie la possibilité d’effectuer une approximation ponctuelle (au sens de la convergence simple) d’un élément de par des fonctions polynomiales s’exprimant à l’aide de polynômes orthogonaux. Soit une suite de polynômes orthogonaux de . On conserve sous sa forme l’équation de récurrence (E.R) On note en plus le coefficient dominant de et on pose .     Noyaux relatifs à une suite de polynômes orthogonaux   On pose pour tout tel que   est appelée noyau d’ordre de la suite .     Montrer que est une fonction polynomiale en et .   Si on fixe , la fonction est polynomiale et s’annule pour . Elle est donc divisible par . Ainsi, est une expression polynomiale en .     Montrer que si est un polynôme de degré et de coefficient dominant alors et en déduire que    Soit un polynôme de degré et de coefficient dominant . Le polynôme est de degré donc . Ce qui donne : En utilisant cette relation, on peut montrer que      Montrer que pour tout  et en déduire que    On a Comme , alors Par ailleurs, et en posant , on a  On en déduit par télescopage que     Une application  Cette question explore une application du noyau .   Montrer que pour tout .   On a    Montrer que    Si , on peut écrire En faisant tendre vers , on obtient    En déduire que si alors entre deux racines de il y a exactement une racine de .   Soit . Notons les racines (simples) de et considérons la fonction rationnelle . est de classe sur chaque intervalle et Puisque alors est strictement monotone sur et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre et . Alors admet une racine unique entre et .      Le problème de l'approximation ponctuelle   On suppose que la suite est totale et on note la projection orthogonale de sur le sous-espace vectoriel formé des fonctions polynomiales de degré inférieur ou égal à .     Montrer que pour tout  Que donne ce résultat si on prend ?   Soit . On a Donc pour tout      Ensuite, si alors et donc pour tout . Ce qui signifie que      On suppose désormais que est un élément de classe de . On fixe dans et on définit la fonction sur par Montrer que est un élément de .    est de classe sur donc est continue sur . Sa continuité en implique l’existence d’un réel tel que On pose . On peut ensuite écrire Si on pose maintenant , alors La fonction est un élément de donc .     Montrer que pour tout ,    Selon la question précédente et la définition de , on a        Justifier que la suite converge vers 0 et en déduire que si la suite de terme est bornée alors converge vers .   La famille étant orthogonale et la fonction un élément de , on a selon l’inégalité de Bessel La série de termes réels positifs est donc convergente. Par condition nécessaire de convergence d’une série, on a donc Soit et soit alors tel que On a alors selon la question précédente pour tout   Si on pose plutôt alors et ainsi      "
 },
 {
   "id": "concentration2025-3-6-2-3-3",
@@ -404,6 +404,177 @@ var ptx_lunr_docs = [
   "number": "1.4.4",
   "title": "Une application.",
   "body": "Une application  Cette question explore une application du noyau .   Montrer que pour tout .   On a    Montrer que    Si , on peut écrire En faisant tendre vers , on obtient    En déduire que si alors entre deux racines de il y a exactement une racine de .   Soit . Notons les racines (simples) de et considérons la fonction rationnelle . est de classe sur chaque intervalle et Puisque alors est strictement monotone sur et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre et . Alors admet une racine unique entre et .  "
+},
+{
+  "id": "concentration2025-3-6-2-4-3",
+  "level": "2",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-4-3",
+  "type": "Exercice",
+  "number": "1.4.5",
+  "title": "",
+  "body": " Montrer que pour tout  Que donne ce résultat si on prend ?   Soit . On a Donc pour tout      Ensuite, si alors et donc pour tout . Ce qui signifie que   "
+},
+{
+  "id": "concentration2025-3-6-2-4-4",
+  "level": "2",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-4-4",
+  "type": "Exercice",
+  "number": "1.4.6",
+  "title": "",
+  "body": " On suppose désormais que est un élément de classe de . On fixe dans et on définit la fonction sur par Montrer que est un élément de .    est de classe sur donc est continue sur . Sa continuité en implique l’existence d’un réel tel que On pose . On peut ensuite écrire Si on pose maintenant , alors La fonction est un élément de donc .  "
+},
+{
+  "id": "concentration2025-3-6-2-4-5",
+  "level": "2",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-4-5",
+  "type": "Exercice",
+  "number": "1.4.7",
+  "title": "",
+  "body": " Montrer que pour tout ,    Selon la question précédente et la définition de , on a     "
+},
+{
+  "id": "concentration2025-3-6-2-4-6",
+  "level": "2",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-4-6",
+  "type": "Exercice",
+  "number": "1.4.8",
+  "title": "",
+  "body": " Justifier que la suite converge vers 0 et en déduire que si la suite de terme est bornée alors converge vers .   La famille étant orthogonale et la fonction un élément de , on a selon l’inégalité de Bessel La série de termes réels positifs est donc convergente. Par condition nécessaire de convergence d’une série, on a donc Soit et soit alors tel que On a alors selon la question précédente pour tout   Si on pose plutôt alors et ainsi   "
+},
+{
+  "id": "concentration2025-3-7",
+  "level": "1",
+  "url": "concentration2025-3-7.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Polynômes orthogonaux relatifs à une forme linéaire",
+  "body": " Polynômes orthogonaux relatifs à une forme linéaire  Problème 5   On considère une forme linéaire de l’espace . On notera pour tout , , la suite est alors dite suite des moments de la forme linéaire .  Une suite de polynôme est dite une suite de polynôme orthogonaux (en abrégé spo) relativement à la forme linéaire si et seulement si où est une suite de réels non nuls.    Condition nécessaire et suffisante d’existence d’une spo   Cette partie traite des conditions nécessaires et suffisantes pour l'existence d'une suite de polynômes orthogonaux relativement à une forme linéaire .    Montrer que est entièrement déterminée par la suite de ses moments .   Si les moments sont connus, alors pour tout élément de , on a Ce qui détermine entièrement .    Montrer que si et sont deux spo relatives à , alors pour tout , il existe tel que .   Soient et deux spo de . Le raisonnement est exactement le même que pour un produit scalaire : on pose Puisque pour tout , on a , alors et donc pour tout . Ainsi, .    Existe-t-il une spo de lorsque pour tout , où est un réel fixé non nul ?   On considère ici la forme linéaire déterminée par les conditions pour tout . De cette définition, il découle que S’il existait une spo pour , on aurait et donc pour tout . Mais alors on aurait , ce qui contredirait la deuxième condition que doit remplir une spo.    On pose pour tout  et . Montrer que admet au moins une spo si et seulement si pour tout . On dira que la forme linéaire est presque définie lorsqu'elle vérifie cette condition.   Considérons pour tout , l’application  est une forme bilinéaire symétrique, et représente sa matrice dans la base de (i.e., ). Pour deux éléments et de , on a où et .  On suppose que admet au moins une spo . Selon le même principe que dans , l’écriture de dans la base est de la forme où , et . Maintenant, si on pose , alors et , et on en déduit que et donc que Or, est diagonale inversible, donc est inversible.  Réciproquement, supposons que les matrices sont toutes inversibles. Considérons une famille de polynômes qui est échelonnée et posons pour tout , .  Soit . Supposons que la famille est « – orthogonale » et montrons que peut être choisi de telle sorte que pour tout . Pour cela, il faut et il suffit que pour tout . Posons donc où représente la matrice des coordonnées d’un polynôme quelconque de dans . On a alors    Sachant que , on en déduit les équivalences  On peut prendre un scalaire non nul quelconque (qui sera le coefficient dominant du polynôme à construire) et il suffit donc de définir par     On suppose que est presque définie. Montrer que la suite de polynômes définie par est une spo relative à .   Si on développe le déterminant selon la dernière ligne, on voit que les cofacteurs utilisés sont les mêmes que ceux de la matrice . et puisque , on a  Pour un polynôme (avec donc), on a   Par ailleurs, un développement similaire donne Alors est une spo pour .     Quelques propriétés des matrices symétriques   Soit une matrice symétrique. On rappelle que est dite définie positive si et seulement si On pose pour tout , . On veut montrer que est définie positive si et seulement si     Montrer que si est définie positive, alors elle vérifie la condition (CDP).   On suppose que est symétrique définie positive. Soit et considérons et . On a donc . Or, tout calcul fait, on a et ainsi . La matrice est ainsi symétrique définie positive. Il est connu que dans ce cas, les valeurs propres de sont et par suite    Démonstration par récurrence  Dans cette question, on démontre la réciproque par récurrence sur .   Traiter le cas où .   Lorsque , une matrice d’ordre 1 est symétrique et elle est définie positive si et seulement si .   On suppose maintenant que toute matrice symétrique d’ordre vérifiant la propriété (CDP) est définie positive et on considère une matrice symétrique vérifiant (CDP). On pose Montrer que .   Sachant que est inversible, on a (en termes d’opérations par blocs)  Et puisque et , alors    Déterminer , et tels que puis conclure.   Posons où et sont des inconnues avec .   Par hypothèse de récurrence, est symétrique définie positive, donc il existe effectivement au moins une matrice inversible telle que . Posons ensuite  La définition de étant possible grâce au résultat de la question précédente. On a alors est inversible ( ) et . On en déduit que est symétrique définie positive. En conclusion,    Propriétés des valeurs propres  On suppose dans cette question que admet valeurs propres distinctes et on considère une BON de formée de vecteurs propres de avec pour tout . On pose et pour tout , On note la base canonique de .   Montrer que pour tout , et en déduire que    Puisque , alors la matrice est inversible. Le scalaire est le coefficient d’indice de la matrice . En utilisant l’expression , on en déduit que soit Pour tout , est un vecteur propre de associé à la valeur propre : En écrivant , on obtient donc    Montrer que est continue strictement décroissante sur chacun des intervalles composant son domaine de définition.   Quitte à changer l’ordre des vecteurs , on peut supposer que . En dérivant l’expression de donnée en (3), on obtient pour tout  On a donc pour tout avec Ce qui est bien sûr exclu. Alors est strictement décroissante sur tout intervalle de .   Montrer que si n’est orthogonal à aucun des vecteurs , alors admet valeurs propres distinctes et qu’entre deux valeurs propres de , il y a exactement une valeur propre de .   On suppose que pour tout . Si , alors Selon le théorème des valeurs intermédiaires, admet au moins un zéro dans . Ce zéro est unique puisque est strictement décroissante sur cet intervalle. Mais puisque par définition , alors    Que peut-on dire si pour certains , on a ?   La fraction rationnelle se décompose en éléments simples sous la forme Dire que pour un certain , revient à dire que n’est pas un pôle de . Ce serait donc une racine de aussi.   N.B. Ce cas est tout à fait possible. Penser au cas d’une matrice diagonale à éléments diagonaux distincts par exemple. Les racines de sont alors toutes des racines de .     Produit scalaire associé à une forme linéaire et étude des propriétés d’une spo   On pose Nous allons étudier les propriétés de ce produit scalaire et de la suite de polynômes orthogonaux associée.    Montrer que est un produit scalaire de si et seulement si Nous dirons alors que la forme linéaire est définie positive.   L’application est bilinéaire symétrique. Elle est définie positive si et seulement si     Montrer que pour tout polynôme , En déduire que est définie positive si et seulement si pour tout .   C’est une expression déjà justifiée et utilisée dans ce corrigé :  étant bilinéaire symétrique, il est un produit scalaire de si et seulement s’il est défini positif sur chaque sous-espace . L’expression ci-dessus indique que est définie positif sur si et seulement si la matrice symétrique est définie positive pour tout . D’après la partie précédente, ceci équivaut à pour tout .    On suppose dans la suite que est définie positive et on considère une spo relative à .  Montrer que le polynôme est scindé à racines simples pour tout . Montrer que et n’ont aucune racine en commun.   Puisque pour tout , alors selon la question (solution 1.5 [p. 7]) la suite est une spo. Nous allons commencer par montrer le résultat suivant :   LEMME : Si est un polynôme réel partout positif sur , alors il existe deux polynômes réels tels que .   DÉM. : Supposons donc que est un polynôme réel partout positif sur . Les racines réelles éventuelles de sont donc toutes de multiplicités paires. Celles non réelles sont deux à deux conjuguées. Le théorème de la décomposition en facteurs irréductibles permet alors d’écrire sous la forme où rassemble les racines réelles de et ses racines complexes non réelles. Ce qui nous permet ensuite d’écrire où les polynômes et sont bien réels.  Revenons maintenant aux polynômes . Soit . est constant non nul et on a donc . Supposons que garde un signe constant sur . Quitte à le remplacer par , on peut supposer que ce signe est positif. Il existe donc deux polynômes réels et tels que et ainsi  étant définie positive, ceci n’est possible que si . Ce qui est impossible car .  Ainsi, ne peut garder un signe constant sur , ce qui implique qu’il admet au moins une racine réelle de multiplicité impaire. La justification s’achève ensuite de la même façon que dans le cas d’une spo d’un espace .    Montrer l’existence de suites et telles que    Il découle de l’aspect spo de la suite qu’il existe des suites telles que    Propriétés de la suite orthonormale  On suppose dans cette question que pour tout . Cela signifie que la suite est orthonormale pour le produit scalaire .   Montrer que pour tout .   Sachant que , on a Mais puisque , alors .   On pose dans la suite Calculer pour tout et en déduire que les valeurs propres de sont exactement les racines de .   Les relations donnent ici  où est le dernier vecteur de la base canonique de .  Pour toute racine de , on a donc . Ayant , le vecteur est non nul et donc est une valeur propre de et est un vecteur propre associé. Puisque est scindé à racines simples et est une matrice carrée d’ordre , alors ce sont les seules valeurs propres de .   Montrer qu’entre deux racines de , il y a exactement une racine de .   Les valeurs propres de et sont entrelacées. Il en est de même des racines de et .    Généraliser le résultat de la question précédente à une spo quelconque (sans les conditions ).   Le résultat de la question précédente est valable pour la suite lorsque on pose pour tout ,  étant associé à , il en a les mêmes racines. Les racines de et sont donc entrelacées.     "
+},
+{
+  "id": "concentration2025-3-7-2-3-3",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-3-3",
+  "type": "Exercice",
+  "number": "1.5.1",
+  "title": "",
+  "body": " Montrer que est entièrement déterminée par la suite de ses moments .   Si les moments sont connus, alors pour tout élément de , on a Ce qui détermine entièrement .  "
+},
+{
+  "id": "concentration2025-3-7-2-3-4",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-3-4",
+  "type": "Exercice",
+  "number": "1.5.2",
+  "title": "",
+  "body": " Montrer que si et sont deux spo relatives à , alors pour tout , il existe tel que .   Soient et deux spo de . Le raisonnement est exactement le même que pour un produit scalaire : on pose Puisque pour tout , on a , alors et donc pour tout . Ainsi, .  "
+},
+{
+  "id": "concentration2025-3-7-2-3-5",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-3-5",
+  "type": "Exercice",
+  "number": "1.5.3",
+  "title": "",
+  "body": " Existe-t-il une spo de lorsque pour tout , où est un réel fixé non nul ?   On considère ici la forme linéaire déterminée par les conditions pour tout . De cette définition, il découle que S’il existait une spo pour , on aurait et donc pour tout . Mais alors on aurait , ce qui contredirait la deuxième condition que doit remplir une spo.  "
+},
+{
+  "id": "concentration2025-3-7-2-3-6",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-3-6",
+  "type": "Exercice",
+  "number": "1.5.4",
+  "title": "",
+  "body": " On pose pour tout  et . Montrer que admet au moins une spo si et seulement si pour tout . On dira que la forme linéaire est presque définie lorsqu'elle vérifie cette condition.   Considérons pour tout , l’application  est une forme bilinéaire symétrique, et représente sa matrice dans la base de (i.e., ). Pour deux éléments et de , on a où et .  On suppose que admet au moins une spo . Selon le même principe que dans , l’écriture de dans la base est de la forme où , et . Maintenant, si on pose , alors et , et on en déduit que et donc que Or, est diagonale inversible, donc est inversible.  Réciproquement, supposons que les matrices sont toutes inversibles. Considérons une famille de polynômes qui est échelonnée et posons pour tout , .  Soit . Supposons que la famille est « – orthogonale » et montrons que peut être choisi de telle sorte que pour tout . Pour cela, il faut et il suffit que pour tout . Posons donc où représente la matrice des coordonnées d’un polynôme quelconque de dans . On a alors    Sachant que , on en déduit les équivalences  On peut prendre un scalaire non nul quelconque (qui sera le coefficient dominant du polynôme à construire) et il suffit donc de définir par   "
+},
+{
+  "id": "concentration2025-3-7-2-3-7",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-3-7",
+  "type": "Exercice",
+  "number": "1.5.5",
+  "title": "",
+  "body": " On suppose que est presque définie. Montrer que la suite de polynômes définie par est une spo relative à .   Si on développe le déterminant selon la dernière ligne, on voit que les cofacteurs utilisés sont les mêmes que ceux de la matrice . et puisque , on a  Pour un polynôme (avec donc), on a   Par ailleurs, un développement similaire donne Alors est une spo pour .  "
+},
+{
+  "id": "concentration2025-3-7-2-4-3",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-4-3",
+  "type": "Exercice",
+  "number": "1.5.6",
+  "title": "",
+  "body": " Montrer que si est définie positive, alors elle vérifie la condition (CDP).   On suppose que est symétrique définie positive. Soit et considérons et . On a donc . Or, tout calcul fait, on a et ainsi . La matrice est ainsi symétrique définie positive. Il est connu que dans ce cas, les valeurs propres de sont et par suite   "
+},
+{
+  "id": "concentration2025-3-7-2-4-4",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-4-4",
+  "type": "Exercice",
+  "number": "1.5.7",
+  "title": "Démonstration par récurrence.",
+  "body": "Démonstration par récurrence  Dans cette question, on démontre la réciproque par récurrence sur .   Traiter le cas où .   Lorsque , une matrice d’ordre 1 est symétrique et elle est définie positive si et seulement si .   On suppose maintenant que toute matrice symétrique d’ordre vérifiant la propriété (CDP) est définie positive et on considère une matrice symétrique vérifiant (CDP). On pose Montrer que .   Sachant que est inversible, on a (en termes d’opérations par blocs)  Et puisque et , alors    Déterminer , et tels que puis conclure.   Posons où et sont des inconnues avec .   Par hypothèse de récurrence, est symétrique définie positive, donc il existe effectivement au moins une matrice inversible telle que . Posons ensuite  La définition de étant possible grâce au résultat de la question précédente. On a alors est inversible ( ) et . On en déduit que est symétrique définie positive. En conclusion,   "
+},
+{
+  "id": "concentration2025-3-7-2-4-5",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-4-5",
+  "type": "Exercice",
+  "number": "1.5.8",
+  "title": "Propriétés des valeurs propres.",
+  "body": "Propriétés des valeurs propres  On suppose dans cette question que admet valeurs propres distinctes et on considère une BON de formée de vecteurs propres de avec pour tout . On pose et pour tout , On note la base canonique de .   Montrer que pour tout , et en déduire que    Puisque , alors la matrice est inversible. Le scalaire est le coefficient d’indice de la matrice . En utilisant l’expression , on en déduit que soit Pour tout , est un vecteur propre de associé à la valeur propre : En écrivant , on obtient donc    Montrer que est continue strictement décroissante sur chacun des intervalles composant son domaine de définition.   Quitte à changer l’ordre des vecteurs , on peut supposer que . En dérivant l’expression de donnée en (3), on obtient pour tout  On a donc pour tout avec Ce qui est bien sûr exclu. Alors est strictement décroissante sur tout intervalle de .   Montrer que si n’est orthogonal à aucun des vecteurs , alors admet valeurs propres distinctes et qu’entre deux valeurs propres de , il y a exactement une valeur propre de .   On suppose que pour tout . Si , alors Selon le théorème des valeurs intermédiaires, admet au moins un zéro dans . Ce zéro est unique puisque est strictement décroissante sur cet intervalle. Mais puisque par définition , alors    Que peut-on dire si pour certains , on a ?   La fraction rationnelle se décompose en éléments simples sous la forme Dire que pour un certain , revient à dire que n’est pas un pôle de . Ce serait donc une racine de aussi.   N.B. Ce cas est tout à fait possible. Penser au cas d’une matrice diagonale à éléments diagonaux distincts par exemple. Les racines de sont alors toutes des racines de .  "
+},
+{
+  "id": "concentration2025-3-7-2-5-3",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-5-3",
+  "type": "Exercice",
+  "number": "1.5.9",
+  "title": "",
+  "body": " Montrer que est un produit scalaire de si et seulement si Nous dirons alors que la forme linéaire est définie positive.   L’application est bilinéaire symétrique. Elle est définie positive si et seulement si   "
+},
+{
+  "id": "concentration2025-3-7-2-5-4",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-5-4",
+  "type": "Exercice",
+  "number": "1.5.10",
+  "title": "",
+  "body": " Montrer que pour tout polynôme , En déduire que est définie positive si et seulement si pour tout .   C’est une expression déjà justifiée et utilisée dans ce corrigé :  étant bilinéaire symétrique, il est un produit scalaire de si et seulement s’il est défini positif sur chaque sous-espace . L’expression ci-dessus indique que est définie positif sur si et seulement si la matrice symétrique est définie positive pour tout . D’après la partie précédente, ceci équivaut à pour tout .  "
+},
+{
+  "id": "concentration2025-3-7-2-5-5",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-5-5",
+  "type": "Exercice",
+  "number": "1.5.11",
+  "title": "",
+  "body": " On suppose dans la suite que est définie positive et on considère une spo relative à .  Montrer que le polynôme est scindé à racines simples pour tout . Montrer que et n’ont aucune racine en commun.   Puisque pour tout , alors selon la question (solution 1.5 [p. 7]) la suite est une spo. Nous allons commencer par montrer le résultat suivant :   LEMME : Si est un polynôme réel partout positif sur , alors il existe deux polynômes réels tels que .   DÉM. : Supposons donc que est un polynôme réel partout positif sur . Les racines réelles éventuelles de sont donc toutes de multiplicités paires. Celles non réelles sont deux à deux conjuguées. Le théorème de la décomposition en facteurs irréductibles permet alors d’écrire sous la forme où rassemble les racines réelles de et ses racines complexes non réelles. Ce qui nous permet ensuite d’écrire où les polynômes et sont bien réels.  Revenons maintenant aux polynômes . Soit . est constant non nul et on a donc . Supposons que garde un signe constant sur . Quitte à le remplacer par , on peut supposer que ce signe est positif. Il existe donc deux polynômes réels et tels que et ainsi  étant définie positive, ceci n’est possible que si . Ce qui est impossible car .  Ainsi, ne peut garder un signe constant sur , ce qui implique qu’il admet au moins une racine réelle de multiplicité impaire. La justification s’achève ensuite de la même façon que dans le cas d’une spo d’un espace .  "
+},
+{
+  "id": "concentration2025-3-7-2-5-6",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-5-6",
+  "type": "Exercice",
+  "number": "1.5.12",
+  "title": "",
+  "body": " Montrer l’existence de suites et telles que    Il découle de l’aspect spo de la suite qu’il existe des suites telles que   "
+},
+{
+  "id": "concentration2025-3-7-2-5-7",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-5-7",
+  "type": "Exercice",
+  "number": "1.5.13",
+  "title": "Propriétés de la suite orthonormale.",
+  "body": "Propriétés de la suite orthonormale  On suppose dans cette question que pour tout . Cela signifie que la suite est orthonormale pour le produit scalaire .   Montrer que pour tout .   Sachant que , on a Mais puisque , alors .   On pose dans la suite Calculer pour tout et en déduire que les valeurs propres de sont exactement les racines de .   Les relations donnent ici  où est le dernier vecteur de la base canonique de .  Pour toute racine de , on a donc . Ayant , le vecteur est non nul et donc est une valeur propre de et est un vecteur propre associé. Puisque est scindé à racines simples et est une matrice carrée d’ordre , alors ce sont les seules valeurs propres de .   Montrer qu’entre deux racines de , il y a exactement une racine de .   Les valeurs propres de et sont entrelacées. Il en est de même des racines de et .  "
+},
+{
+  "id": "concentration2025-3-7-2-5-8",
+  "level": "2",
+  "url": "concentration2025-3-7.html#concentration2025-3-7-2-5-8",
+  "type": "Exercice",
+  "number": "1.5.14",
+  "title": "",
+  "body": " Généraliser le résultat de la question précédente à une spo quelconque (sans les conditions ).   Le résultat de la question précédente est valable pour la suite lorsque on pose pour tout ,  étant associé à , il en a les mêmes racines. Les racines de et sont donc entrelacées.  "
 }
 ]
 
