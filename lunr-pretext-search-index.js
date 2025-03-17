@@ -366,40 +366,40 @@ var ptx_lunr_docs = [
   "url": "concentration2025-3-6.html",
   "type": "Section",
   "number": "1.4",
-  "title": "Problème 4 : Approximation ponctuelle par des polynômes orthogonaux",
-  "body": " Problème 4 : Approximation ponctuelle par des polynômes orthogonaux    Dans ce problème, on étudie la possibilité d’effectuer une approximation ponctuelle (au sens de la convergence simple) d’un élément de par des fonctions polynomiales s’exprimant à l’aide de polynômes orthogonaux. Soit une suite de polynômes orthogonaux de . On conserve sous sa forme l’équation de récurrence (E.R) On note en plus le coefficient dominant de et on pose .     Noyaux relatifs à une suite de polynômes orthogonaux   On pose pour tout tel que   est appelée noyau d’ordre de la suite .     Montrer que est une fonction polynomiale en et .   Si on fixe , la fonction est polynomiale et s’annule pour . Elle est donc divisible par . Ainsi, est une expression polynomiale en .     Montrer que si est un polynôme de degré et de coefficient dominant alors et en déduire que    Soit un polynôme de degré et de coefficient dominant . Le polynôme est de degré donc . Ce qui donne : En utilisant cette relation, on peut montrer que      Montrer que pour tout  et en déduire que    On a Comme , alors Par ailleurs, et en posant , on a  On en déduit par télescopage que     Une application  Cette question explore une application du noyau .   Montrer que pour tout .   On a    Montrer que    Si , on peut écrire En faisant tendre vers , on obtient    En déduire que si alors entre deux racines de il y a exactement une racine de .   Soit . Notons les racines (simples) de et considérons la fonction rationnelle . est de classe sur chaque intervalle et Puisque alors est strictement monotone sur et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre et . Alors admet une racine unique entre et .     "
+  "title": "Approximation ponctuelle par des polynômes orthogonaux",
+  "body": " Approximation ponctuelle par des polynômes orthogonaux  Problème 4   Dans ce problème, on étudie la possibilité d’effectuer une approximation ponctuelle (au sens de la convergence simple) d’un élément de par des fonctions polynomiales s’exprimant à l’aide de polynômes orthogonaux. Soit une suite de polynômes orthogonaux de . On conserve sous sa forme l’équation de récurrence (E.R) On note en plus le coefficient dominant de et on pose .     Noyaux relatifs à une suite de polynômes orthogonaux   On pose pour tout tel que   est appelée noyau d’ordre de la suite .     Montrer que est une fonction polynomiale en et .   Si on fixe , la fonction est polynomiale et s’annule pour . Elle est donc divisible par . Ainsi, est une expression polynomiale en .     Montrer que si est un polynôme de degré et de coefficient dominant alors et en déduire que    Soit un polynôme de degré et de coefficient dominant . Le polynôme est de degré donc . Ce qui donne : En utilisant cette relation, on peut montrer que      Montrer que pour tout  et en déduire que    On a Comme , alors Par ailleurs, et en posant , on a  On en déduit par télescopage que     Une application  Cette question explore une application du noyau .   Montrer que pour tout .   On a    Montrer que    Si , on peut écrire En faisant tendre vers , on obtient    En déduire que si alors entre deux racines de il y a exactement une racine de .   Soit . Notons les racines (simples) de et considérons la fonction rationnelle . est de classe sur chaque intervalle et Puisque alors est strictement monotone sur et ses limites aux extrémités sont infinies et nécessairement de signes opposés. Elle s’annule donc une seule fois entre et . Alors admet une racine unique entre et .     "
 },
 {
-  "id": "concentration2025-3-6-2-2-3",
+  "id": "concentration2025-3-6-2-3-3",
   "level": "2",
-  "url": "concentration2025-3-6.html#concentration2025-3-6-2-2-3",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-3-3",
   "type": "Exercice",
   "number": "1.4.1",
   "title": "",
   "body": " Montrer que est une fonction polynomiale en et .   Si on fixe , la fonction est polynomiale et s’annule pour . Elle est donc divisible par . Ainsi, est une expression polynomiale en .  "
 },
 {
-  "id": "concentration2025-3-6-2-2-4",
+  "id": "concentration2025-3-6-2-3-4",
   "level": "2",
-  "url": "concentration2025-3-6.html#concentration2025-3-6-2-2-4",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-3-4",
   "type": "Exercice",
   "number": "1.4.2",
   "title": "",
   "body": " Montrer que si est un polynôme de degré et de coefficient dominant alors et en déduire que    Soit un polynôme de degré et de coefficient dominant . Le polynôme est de degré donc . Ce qui donne : En utilisant cette relation, on peut montrer que   "
 },
 {
-  "id": "concentration2025-3-6-2-2-5",
+  "id": "concentration2025-3-6-2-3-5",
   "level": "2",
-  "url": "concentration2025-3-6.html#concentration2025-3-6-2-2-5",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-3-5",
   "type": "Exercice",
   "number": "1.4.3",
   "title": "",
   "body": " Montrer que pour tout  et en déduire que    On a Comme , alors Par ailleurs, et en posant , on a  On en déduit par télescopage que   "
 },
 {
-  "id": "concentration2025-3-6-2-2-6",
+  "id": "concentration2025-3-6-2-3-6",
   "level": "2",
-  "url": "concentration2025-3-6.html#concentration2025-3-6-2-2-6",
+  "url": "concentration2025-3-6.html#concentration2025-3-6-2-3-6",
   "type": "Exercice",
   "number": "1.4.4",
   "title": "Une application.",
